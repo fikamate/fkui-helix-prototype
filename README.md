@@ -7,7 +7,7 @@ En automatiserad integration mellan FKUI-komponenter och Helix designsystem med 
 Detta projekt innehåller:
 
 - **Helix ↔ FKUI Bridge** - Automatisk mappning mellan designsystem (90.6% precision)
-- **467 Variabelmappningar** - Intelligenta semantiska kopplingar  
+- **467 Variabelmappningar** - Intelligenta semantiska kopplingar
 - **Vue.js Integration** - Komplett applikation med FKUI + Helix
 - **Automated Workflows** - Regenerering och uppdatering av mappningar
 - **Omfattande Dokumentation** - Teknisk guide och Figma API-integration
@@ -38,7 +38,7 @@ Helix foundation och semantic tokens finns redan i `src/css/`:
 ```
 src/css/
 ├── foundation.css    # Bas-tokens (färger, spacing, typografi)
-├── semantic.css      # Semantiska tokens (surface, text, border)  
+├── semantic.css      # Semantiska tokens (surface, text, border)
 └── index.css         # Import av alla Helix-tokens
 ```
 
@@ -49,15 +49,15 @@ src/css/
   /* FKUI Primary → Helix Primary */
   --f-background-pageheader-primary: var(--helix-color-surface-primary-default);
   --f-background-button-primary: var(--helix-color-surface-primary-default);
-  
+
   /* FKUI Success → Helix Success */
   --f-background-badge-success: var(--helix-color-surface-success-default);
   --f-color-success-medium: var(--helix-color-text-success-default);
-  
+
   /* Icon storlekar → Helix typografi */
   --f-icon-size-large: var(--helix-typography-font-size-display-xs); /* 24px */
-  --f-icon-size-medium: var(--helix-typography-font-size-text-xl);   /* 20px */
-  --f-icon-size-small: var(--helix-typography-font-size-text-md);    /* 16px */
+  --f-icon-size-medium: var(--helix-typography-font-size-text-xl); /* 20px */
+  --f-icon-size-small: var(--helix-typography-font-size-text-md); /* 16px */
 }
 ```
 
@@ -111,14 +111,14 @@ function mapFKUIToHelix(fkuiVar) {
   if (varName.includes("primary") && varName.includes("background")) {
     return "var(--helix-color-surface-primary-default)";
   }
-  
-  // Icon storlekar → Typography tokens  
+
+  // Icon storlekar → Typography tokens
   if (varName.includes("icon") && varName.includes("size")) {
     if (varName.includes("large")) {
       return "var(--helix-typography-font-size-display-xs)"; // 24px
     }
   }
-  
+
   // Spacing → Helix spacing system
   if (varName.includes("padding")) {
     return "var(--helix-spacing-50)"; // 20px
