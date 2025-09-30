@@ -167,8 +167,9 @@ Scriptet mappar automatiskt FKUI-variabler till dina tokens baserat på användn
 - 🚧 **Många semantiskt felaktiga** (t.ex. border-width → färg)
 
 ⚠️ **Nuvarande begränsningar:**
+
 - Många mappningar är inte visuellt korrekta
-- Algoritmen mappar allt till färger som fallback  
+- Algoritmen mappar allt till färger som fallback
 - Kräver omfattande manuell justering för production-användning
 
 Variabler fördelade på kategorier:
