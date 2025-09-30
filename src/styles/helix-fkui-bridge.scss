@@ -1,14 +1,15 @@
 /*
  * HELIX ↔ FKUI Bridge - Automatiskt genererad
- * Genererad: 2025-09-30T10:11:29.225Z
+ * Genererad: 2025-09-30T12:19:51.509Z
  * 
  * Detta är en intelligent överlagring som mappar FKUI:s CSS-variabler
  * till ditt Helix designsystem.
  * 
  * Statistik:
  * - Totalt FKUI-variabler: 467
- * - Intelligenta mappningar: 423
- * - Fallback mappningar: 44
+ * - Intelligenta mappningar: 426
+ * - Fallback mappningar: 0
+ * - Hoppade över (ingen lämplig mappning): 41
  * 
  * ANVÄND DENNA FIL genom att importera den i local.scss:
  * @import "./styles/helix-fkui-bridge.scss";
@@ -25,16 +26,16 @@
     /* === BORDERS (9 variabler) === */
     --f-border-radius-medium: var(--helix-radius-md); /* Automatiskt mappad från Helix designsystem */
     --f-border-radius-small: var(--helix-radius-sm); /* Automatiskt mappad från Helix designsystem */
-    --f-border-width-medium: var(--helix-color-surface-neutral-default); /* Fallback - ingen direkt mappning hittad */
-    --f-border-width-small: var(--helix-color-surface-neutral-default); /* Fallback - ingen direkt mappning hittad */
-    --f-expandable-panel-heading-border-close: var(--helix-color-surface-neutral-default); /* Fallback - ingen direkt mappning hittad */
-    --f-expandable-panel-heading-border-open: var(--helix-color-surface-neutral-default); /* Fallback - ingen direkt mappning hittad */
+    /* --f-border-width-medium: Hoppad - Hoppar över - ingen lämplig Helix-token hittad */
+    /* --f-border-width-small: Hoppad - Hoppar över - ingen lämplig Helix-token hittad */
+    /* --f-expandable-panel-heading-border-close: Hoppad - Hoppar över - ingen lämplig Helix-token hittad */
+    /* --f-expandable-panel-heading-border-open: Hoppad - Hoppar över - ingen lämplig Helix-token hittad */
     --f-expandable-panel-heading-border-radius: var(--helix-radius-md); /* Automatiskt mappad från Helix designsystem */
-    --f-static-panel-heading-border: var(--helix-color-surface-neutral-default); /* Fallback - ingen direkt mappning hittad */
-    --f-tooltip-border-width: var(--helix-color-surface-neutral-default); /* Fallback - ingen direkt mappning hittad */
+    /* --f-static-panel-heading-border: Hoppad - Hoppar över - ingen lämplig Helix-token hittad */
+    /* --f-tooltip-border-width: Hoppad - Hoppar över - ingen lämplig Helix-token hittad */
 
     /* === BUTTONS (48 variabler) === */
-    --f-button-default-line-height: var(--helix-color-surface-neutral-default); /* Fallback - ingen direkt mappning hittad */
+    /* --f-button-default-line-height: Hoppad - Hoppar över - ingen lämplig Helix-token hittad */
     --f-button-default-padding: var(--helix-spacing-md); /* Automatiskt mappad från Helix designsystem */
     --f-button-default-padding-bottom: var(--helix-spacing-md); /* Automatiskt mappad från Helix designsystem */
     --f-button-default-padding-left: var(--helix-spacing-md); /* Automatiskt mappad från Helix designsystem */
@@ -52,8 +53,8 @@
     --f-button-discrete-padding-top: var(--helix-spacing-md); /* Automatiskt mappad från Helix designsystem */
     --f-button-discrete-radius-hover: var(--helix-radius-md); /* Automatiskt mappad från Helix designsystem */
     --f-button-discrete-table-column-action-padding: var(--helix-spacing-md); /* Automatiskt mappad från Helix designsystem */
-    --f-button-letter-spacing: var(--helix-spacing-md); /* Automatiskt mappad från Helix designsystem */
-    --f-button-min-width: var(--helix-color-surface-neutral-default); /* Fallback - ingen direkt mappning hittad */
+    --f-button-letter-spacing: 0; /* Automatiskt mappad från Helix designsystem */
+    /* --f-button-min-width: Hoppad - Hoppar över - ingen lämplig Helix-token hittad */
     --f-button-primary-padding: var(--helix-spacing-md); /* Automatiskt mappad från Helix designsystem */
     --f-button-primary-padding-bottom: var(--helix-spacing-md); /* Automatiskt mappad från Helix designsystem */
     --f-button-primary-padding-left: var(--helix-spacing-md); /* Automatiskt mappad från Helix designsystem */
@@ -265,22 +266,22 @@
     --f-icon-color-white: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
     --f-icon-color-wizard-step-done: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
     --f-icon-color-wizard-step-pending: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
-    --f-text-color-button-disabled: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
-    --f-text-color-button-discrete: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
-    --f-text-color-button-discrete-disabled: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
-    --f-text-color-button-discrete-hover: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
-    --f-text-color-button-discrete-inverted: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
-    --f-text-color-button-discrete-inverted-disabled: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
-    --f-text-color-button-discrete-inverted-hover: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
+    --f-text-color-button-disabled: var(--helix-color-text-neutral-weak); /* Automatiskt mappad från Helix designsystem */
+    --f-text-color-button-discrete: var(--helix-color-text-primary-default); /* Automatiskt mappad från Helix designsystem */
+    --f-text-color-button-discrete-disabled: var(--helix-color-text-primary-default); /* Automatiskt mappad från Helix designsystem */
+    --f-text-color-button-discrete-hover: var(--helix-color-text-primary-default); /* Automatiskt mappad från Helix designsystem */
+    --f-text-color-button-discrete-inverted: var(--helix-color-text-primary-default); /* Automatiskt mappad från Helix designsystem */
+    --f-text-color-button-discrete-inverted-disabled: var(--helix-color-text-primary-default); /* Automatiskt mappad från Helix designsystem */
+    --f-text-color-button-discrete-inverted-hover: var(--helix-color-text-primary-default); /* Automatiskt mappad från Helix designsystem */
     --f-text-color-button-primary: var(--helix-color-text-primary-default); /* Automatiskt mappad från Helix designsystem */
-    --f-text-color-button-secondary: var(--helix-color-text-neutral-weak); /* Automatiskt mappad från Helix designsystem */
-    --f-text-color-button-standard: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
-    --f-text-color-button-tertiary: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
-    --f-text-color-button-tertiary-disabled: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
-    --f-text-color-button-tertiary-hover: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
-    --f-text-color-button-tertiary-inverted: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
-    --f-text-color-button-tertiary-inverted-disabled: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
-    --f-text-color-button-tertiary-inverted-hover: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
+    --f-text-color-button-secondary: var(--helix-color-text-neutral-default); /* Automatiskt mappad från Helix designsystem */
+    --f-text-color-button-standard: var(--helix-color-text-neutral-default); /* Automatiskt mappad från Helix designsystem */
+    --f-text-color-button-tertiary: var(--helix-color-text-primary-default); /* Automatiskt mappad från Helix designsystem */
+    --f-text-color-button-tertiary-disabled: var(--helix-color-text-primary-default); /* Automatiskt mappad från Helix designsystem */
+    --f-text-color-button-tertiary-hover: var(--helix-color-text-primary-default); /* Automatiskt mappad från Helix designsystem */
+    --f-text-color-button-tertiary-inverted: var(--helix-color-text-primary-default); /* Automatiskt mappad från Helix designsystem */
+    --f-text-color-button-tertiary-inverted-disabled: var(--helix-color-text-primary-default); /* Automatiskt mappad från Helix designsystem */
+    --f-text-color-button-tertiary-inverted-hover: var(--helix-color-text-primary-default); /* Automatiskt mappad från Helix designsystem */
     --f-text-color-chip: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
     --f-text-color-chip-active: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
     --f-text-color-chip-hover: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
@@ -417,34 +418,34 @@
     --f-tooltip-icon-size: var(--helix-typography-font-size-text-md); /* Automatiskt mappad från Helix designsystem */
 
     /* === OTHER (38 variabler) === */
-    --f-animation-duration-long: var(--helix-color-surface-neutral-default); /* Fallback - ingen direkt mappning hittad */
-    --f-animation-duration-medium: var(--helix-color-surface-neutral-default); /* Fallback - ingen direkt mappning hittad */
-    --f-animation-duration-short: var(--helix-color-surface-neutral-default); /* Fallback - ingen direkt mappning hittad */
-    --f-animation-expand-close: var(--helix-color-surface-neutral-default); /* Fallback - ingen direkt mappning hittad */
-    --f-animation-expand-open: var(--helix-color-surface-neutral-default); /* Fallback - ingen direkt mappning hittad */
-    --f-animation-wrapper: var(--helix-color-surface-neutral-default); /* Fallback - ingen direkt mappning hittad */
-    --f-backdrop-modal: var(--helix-color-surface-neutral-default); /* Fallback - ingen direkt mappning hittad */
-    --f-calendar-height: var(--helix-color-surface-neutral-default); /* Fallback - ingen direkt mappning hittad */
-    --f-density-factor: var(--helix-color-surface-neutral-default); /* Fallback - ingen direkt mappning hittad */
-    --f-height-large: var(--helix-color-surface-neutral-default); /* Fallback - ingen direkt mappning hittad */
-    --f-height-medium: var(--helix-color-surface-neutral-default); /* Fallback - ingen direkt mappning hittad */
-    --f-height-small: var(--helix-color-surface-neutral-default); /* Fallback - ingen direkt mappning hittad */
-    --f-hover-filter: var(--helix-color-surface-neutral-default); /* Fallback - ingen direkt mappning hittad */
-    --f-line-height-large: var(--helix-color-surface-neutral-default); /* Fallback - ingen direkt mappning hittad */
-    --f-line-height-medium: var(--helix-color-surface-neutral-default); /* Fallback - ingen direkt mappning hittad */
-    --f-line-height-small: var(--helix-color-surface-neutral-default); /* Fallback - ingen direkt mappning hittad */
-    --f-loader-size: var(--helix-color-surface-neutral-default); /* Fallback - ingen direkt mappning hittad */
-    --f-logo-image-large: var(--helix-color-surface-neutral-default); /* Fallback - ingen direkt mappning hittad */
-    --f-logo-image-small: var(--helix-color-surface-neutral-default); /* Fallback - ingen direkt mappning hittad */
-    --f-logo-size-large: var(--helix-color-surface-neutral-default); /* Fallback - ingen direkt mappning hittad */
-    --f-logo-size-small: var(--helix-color-surface-neutral-default); /* Fallback - ingen direkt mappning hittad */
-    --f-modal-size-fullwidth: var(--helix-color-surface-neutral-default); /* Fallback - ingen direkt mappning hittad */
-    --f-modal-size-large: var(--helix-color-surface-neutral-default); /* Fallback - ingen direkt mappning hittad */
-    --f-modal-size-medium: var(--helix-color-surface-neutral-default); /* Fallback - ingen direkt mappning hittad */
-    --f-modal-size-small: var(--helix-color-surface-neutral-default); /* Fallback - ingen direkt mappning hittad */
-    --f-size-large: var(--helix-color-surface-neutral-default); /* Fallback - ingen direkt mappning hittad */
-    --f-size-medium: var(--helix-color-surface-neutral-default); /* Fallback - ingen direkt mappning hittad */
-    --f-size-small: var(--helix-color-surface-neutral-default); /* Fallback - ingen direkt mappning hittad */
+    /* --f-animation-duration-long: Hoppad - Hoppar över - ingen lämplig Helix-token hittad */
+    /* --f-animation-duration-medium: Hoppad - Hoppar över - ingen lämplig Helix-token hittad */
+    /* --f-animation-duration-short: Hoppad - Hoppar över - ingen lämplig Helix-token hittad */
+    /* --f-animation-expand-close: Hoppad - Hoppar över - ingen lämplig Helix-token hittad */
+    /* --f-animation-expand-open: Hoppad - Hoppar över - ingen lämplig Helix-token hittad */
+    /* --f-animation-wrapper: Hoppad - Hoppar över - ingen lämplig Helix-token hittad */
+    /* --f-backdrop-modal: Hoppad - Hoppar över - ingen lämplig Helix-token hittad */
+    /* --f-calendar-height: Hoppad - Hoppar över - ingen lämplig Helix-token hittad */
+    /* --f-density-factor: Hoppad - Hoppar över - ingen lämplig Helix-token hittad */
+    /* --f-height-large: Hoppad - Hoppar över - ingen lämplig Helix-token hittad */
+    /* --f-height-medium: Hoppad - Hoppar över - ingen lämplig Helix-token hittad */
+    /* --f-height-small: Hoppad - Hoppar över - ingen lämplig Helix-token hittad */
+    /* --f-hover-filter: Hoppad - Hoppar över - ingen lämplig Helix-token hittad */
+    /* --f-line-height-large: Hoppad - Hoppar över - ingen lämplig Helix-token hittad */
+    /* --f-line-height-medium: Hoppad - Hoppar över - ingen lämplig Helix-token hittad */
+    /* --f-line-height-small: Hoppad - Hoppar över - ingen lämplig Helix-token hittad */
+    /* --f-loader-size: Hoppad - Hoppar över - ingen lämplig Helix-token hittad */
+    /* --f-logo-image-large: Hoppad - Hoppar över - ingen lämplig Helix-token hittad */
+    /* --f-logo-image-small: Hoppad - Hoppar över - ingen lämplig Helix-token hittad */
+    /* --f-logo-size-large: Hoppad - Hoppar över - ingen lämplig Helix-token hittad */
+    /* --f-logo-size-small: Hoppad - Hoppar över - ingen lämplig Helix-token hittad */
+    /* --f-modal-size-fullwidth: Hoppad - Hoppar över - ingen lämplig Helix-token hittad */
+    /* --f-modal-size-large: Hoppad - Hoppar över - ingen lämplig Helix-token hittad */
+    /* --f-modal-size-medium: Hoppad - Hoppar över - ingen lämplig Helix-token hittad */
+    /* --f-modal-size-small: Hoppad - Hoppar över - ingen lämplig Helix-token hittad */
+    /* --f-size-large: Hoppad - Hoppar över - ingen lämplig Helix-token hittad */
+    /* --f-size-medium: Hoppad - Hoppar över - ingen lämplig Helix-token hittad */
+    /* --f-size-small: Hoppad - Hoppar över - ingen lämplig Helix-token hittad */
     --f-space-large: var(--helix-spacing-80); /* Automatiskt mappad från Helix designsystem */
     --f-space-medium: var(--helix-spacing-50); /* Automatiskt mappad från Helix designsystem */
     --f-space-small: var(--helix-spacing-30); /* Automatiskt mappad från Helix designsystem */
@@ -453,8 +454,8 @@
     --f-space-xx-large: var(--helix-spacing-160); /* Automatiskt mappad från Helix designsystem */
     --f-space-xx-small: var(--helix-spacing-30); /* Automatiskt mappad från Helix designsystem */
     --f-space-xxx-large: var(--helix-spacing-200); /* Automatiskt mappad från Helix designsystem */
-    --f-tooltip-offset: var(--helix-color-surface-neutral-default); /* Fallback - ingen direkt mappning hittad */
-    --f-width-full: var(--helix-color-surface-neutral-default); /* Fallback - ingen direkt mappning hittad */
+    /* --f-tooltip-offset: Hoppad - Hoppar över - ingen lämplig Helix-token hittad */
+    /* --f-width-full: Hoppad - Hoppar över - ingen lämplig Helix-token hittad */
 
     /* === SHADOWS (7 variabler) === */
     --f-box-modal-shadow: 0 1px 3px var(--helix-color-shadow-neutral-xs); /* Automatiskt mappad från Helix designsystem */
@@ -481,9 +482,9 @@
     /* === TYPOGRAPHY (25 variabler) === */
     --f-font-family: var(--helix-typography-font-family-font-family-body); /* Automatiskt mappad från Helix designsystem */
     --f-font-family-code: var(--helix-typography-font-family-font-family-body); /* Automatiskt mappad från Helix designsystem */
-    --f-font-height-medium: var(--helix-color-surface-neutral-default); /* Fallback - ingen direkt mappning hittad */
-    --f-font-height-small: var(--helix-color-surface-neutral-default); /* Fallback - ingen direkt mappning hittad */
-    --f-font-height-strong: var(--helix-color-surface-neutral-default); /* Fallback - ingen direkt mappning hittad */
+    /* --f-font-height-medium: Hoppad - Hoppar över - ingen lämplig Helix-token hittad */
+    /* --f-font-height-small: Hoppad - Hoppar över - ingen lämplig Helix-token hittad */
+    /* --f-font-height-strong: Hoppad - Hoppar över - ingen lämplig Helix-token hittad */
     --f-font-size-default: var(--helix-typography-font-size-text-md); /* Automatiskt mappad från Helix designsystem */
     --f-font-size-default-large-up: var(--helix-typography-font-size-text-lg); /* Automatiskt mappad från Helix designsystem */
     --f-font-size-default-large-up-rem: var(--helix-typography-font-size-text-lg); /* Automatiskt mappad från Helix designsystem */
@@ -500,9 +501,9 @@
     --f-font-size-xxx-large: var(--helix-typography-font-size-text-lg); /* Automatiskt mappad från Helix designsystem */
     --f-font-size-xxxx-large: var(--helix-typography-font-size-text-lg); /* Automatiskt mappad från Helix designsystem */
     --f-font-size-xxxxx-large: var(--helix-typography-font-size-text-lg); /* Automatiskt mappad från Helix designsystem */
-    --f-font-weight-bold: var(--helix-color-surface-neutral-default); /* Fallback - ingen direkt mappning hittad */
-    --f-font-weight-medium: var(--helix-color-surface-neutral-default); /* Fallback - ingen direkt mappning hittad */
-    --f-font-weight-normal: var(--helix-color-surface-neutral-default); /* Fallback - ingen direkt mappning hittad */
+    --f-font-weight-bold: var(--helix-typography-font-weight-bold); /* Automatiskt mappad från Helix designsystem */
+    --f-font-weight-medium: var(--helix-typography-font-weight-medium); /* Automatiskt mappad från Helix designsystem */
+    --f-font-weight-normal: var(--helix-typography-font-weight-regular); /* Automatiskt mappad från Helix designsystem */
     --f-modal-title-font-size: var(--helix-typography-font-size-text-md); /* Automatiskt mappad från Helix designsystem */
 }
 

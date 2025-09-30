@@ -1,6 +1,6 @@
-# FKUI + Helix Design System Prototype
+# 🎨 FKUI + Helix Design System Integration
 
-⚠️ **Experimentell prototyp** - Automatisk mappning mellan FKUI-komponenter och Helix designsystem. Många mappningar är inte semantiskt korrekta än.
+Ett intelligent system för att integrera **FKUI** med ditt **Helix designsystem** genom automatisk variabelmappning och semantisk validering.
 
 ## 🎯 Översikt
 

@@ -124,98 +124,110 @@ registerLayout({
 }
 
 /* ========================================
-   LAYOUT AREAS STYLING (Manuellt - FKUI har inga variabler för dessa)
+   LAYOUT AREAS STYLING (Helix Design System)
    ======================================== */
 
 ::part(area header) {
-    /* Layout areas måste stylas manuellt eftersom FKUI inte har 
-       CSS-variabler för ::part(area xxx) selektor */
-    background: var(--my-primary-color) !important;
-    color: white !important;
+    /* Använd Helix-variabler direkt */
+    background: var(--helix-color-surface-primary-default) !important;
+    color: var(--helix-color-text-base-white) !important;
 
-    /* Dessa FKUI-variabler kommer från generated-fkui-overrides.scss
-       men fungerar kanske inte för layout areas */
-    --f-background-pageheader-primary: var(--my-primary-color) !important;
-    --f-page-layout-color: white !important;
+    /* FKUI-variabler mappas via bridge till Helix */
+    --f-background-pageheader-primary: var(
+        --helix-color-surface-primary-default
+    ) !important;
+    --f-page-layout-color: var(--helix-color-text-base-white) !important;
 }
 
 ::part(area contextbar) {
-    /* FKUI layout-variabler */
-    --f-page-layout-background: var(--my-surface) !important;
-    --f-page-layout-color: var(--my-text-primary) !important;
-
-    /* Manuella overrides */
-    background: var(--my-surface) !important;
-    border-bottom: 2px solid var(--my-secondary-color) !important;
+    /* Helix Design System */
+    --f-page-layout-background: var(
+        --helix-color-surface-neutral-default
+    ) !important;
+    --f-page-layout-color: var(--helix-color-text-neutral-default) !important;
+    background: var(--helix-color-surface-neutral-default) !important;
+    border-bottom: 2px solid var(--helix-color-border-neutral-default) !important;
 }
 
 ::part(area toolbar) {
-    --f-page-layout-background: var(--my-surface) !important;
-    --f-page-layout-color: var(--my-text-primary) !important;
-    background: var(--my-surface) !important;
-    border-bottom: 3px solid var(--my-primary-color) !important;
+    --f-page-layout-background: var(
+        --helix-color-surface-secondary-default
+    ) !important;
+    --f-page-layout-color: var(--helix-color-text-neutral-default) !important;
+    background: var(--helix-color-surface-secondary-default) !important;
+    border-bottom: 3px solid var(--helix-color-border-primary-default) !important;
 }
 
 ::part(area left) {
-    --f-page-layout-background: var(--my-surface) !important;
-    --f-page-layout-color: var(--my-text-primary) !important;
-    background: var(--my-surface) !important;
-    border-right: 2px solid var(--my-accent-color) !important;
+    --f-page-layout-background: var(
+        --helix-color-surface-neutral-subtle
+    ) !important;
+    --f-page-layout-color: var(--helix-color-text-neutral-default) !important;
+    background: var(--helix-color-surface-neutral-subtle) !important;
+    border-right: 2px solid var(--helix-color-border-neutral-default) !important;
 }
 
 ::part(area right) {
-    --f-page-layout-background: var(--my-surface) !important;
-    --f-page-layout-color: var(--my-text-primary) !important;
-    background: var(--my-surface) !important;
-    border-left: 2px solid var(--my-accent-color) !important;
+    --f-page-layout-background: var(
+        --helix-color-surface-neutral-subtle
+    ) !important;
+    --f-page-layout-color: var(--helix-color-text-neutral-default) !important;
+    background: var(--helix-color-surface-neutral-subtle) !important;
+    border-left: 2px solid var(--helix-color-border-neutral-default) !important;
 }
 
-/* Styling med vårt nya variabelsystem */
+/* Styling med Helix Design System */
 f-page-header,
 f-page-header *,
 :deep(f-page-header),
 :deep(.f-page-header) {
-    background: var(--my-primary-color) !important;
-    background-color: var(--my-primary-color) !important;
+    background: var(--helix-color-surface-primary-default) !important;
+    background-color: var(--helix-color-surface-primary-default) !important;
     background-image: linear-gradient(
         135deg,
-        var(--my-primary-color),
-        var(--my-secondary-color)
+        var(--helix-color-surface-primary-default),
+        var(--helix-color-surface-primary-strong)
     ) !important;
-    color: white !important;
-    box-shadow: var(--my-shadow) !important;
-    padding: var(--my-spacing-md) !important;
+    color: var(--helix-color-text-base-white) !important;
+    box-shadow: 0 1px 2px var(--helix-color-shadow-neutral-sm-01),
+        0 1px 3px var(--helix-color-shadow-neutral-sm-02) !important;
+    padding: var(--helix-spacing-50) !important;
 }
 
 /* ========================================
    FKUI KOMPONENTER (Automatiskt från generated-fkui-overrides.scss)
    ======================================== */
 
-/* Dessa variabler kommer från scriptet men vi override:ar dem här
-   för att vara säkra på att de fungerar för f-page-header */
+/* FKUI-variabler mappade till Helix (dessa mappas automatiskt via bridge) */
 f-page-header {
-    /* DESSA är automatiskt genererade i generated-fkui-overrides.scss */
-    --f-background-pageheader-primary: var(--my-primary-color) !important;
-    --f-color-primary-strong: var(--my-primary-color) !important;
-    --f-color-brand-a-medium: var(--my-primary-color) !important;
+    /* Bridge-systemet mappar dessa automatiskt, men vi kan override för säkerhets skull */
+    --f-background-pageheader-primary: var(
+        --helix-color-surface-primary-default
+    ) !important;
+    --f-color-primary-strong: var(
+        --helix-color-surface-primary-strong
+    ) !important;
+    --f-color-brand-a-medium: var(
+        --helix-color-surface-primary-default
+    ) !important;
     --fkds-color-action-background-primary-default: var(
-        --my-primary-color
+        --helix-color-surface-primary-default
     ) !important;
 }
 
-/* Navigation styling med vårt nya variabelsystem */
+/* Navigation styling med Helix Design System */
 :deep(.f-navigation-menu) {
-    background: var(--my-primary-color) !important;
-    padding: var(--my-spacing-sm) !important;
-    border-radius: var(--my-border-radius) !important;
-    margin: var(--my-spacing-xs) !important;
+    background: var(--helix-color-surface-primary-default) !important;
+    padding: var(--helix-spacing-30) !important;
+    border-radius: 8px !important;
+    margin: var(--helix-spacing-20) !important;
 }
 
 :deep(.f-navigation-menu a) {
-    color: white !important;
+    color: var(--helix-color-text-base-white) !important;
     border: 1px solid rgba(255, 255, 255, 0.3) !important;
-    border-radius: var(--my-border-radius) !important;
-    padding: var(--my-spacing-xs) var(--my-spacing-sm) !important;
+    border-radius: 6px !important;
+    padding: var(--helix-spacing-20) var(--helix-spacing-30) !important;
     text-decoration: none !important;
     transition: all 0.2s ease !important;
     background: rgba(255, 255, 255, 0.1) !important;
@@ -223,28 +235,29 @@ f-page-header {
 
 :deep(.f-navigation-menu a:hover) {
     background: rgba(255, 255, 255, 0.2) !important;
-    border-color: white !important;
+    border-color: var(--helix-color-text-base-white) !important;
 }
 
 /* ========================================
    CUSTOM BUTTON STYLING - MANUELL CSS
    ======================================== */
 
-/* Specifik styling för "öppna detaljpanel"-knappen */
+/* Specifik styling för "öppna detaljpanel"-knappen med Helix */
 :deep(.button.button--secondary) {
     border-radius: 4px !important; /* Din önskade rundning: 4px */
-    background: var(--my-secondary-color) !important;
-    color: white !important;
-    border: 2px solid var(--my-secondary-color) !important;
-    padding: var(--my-spacing-sm) var(--my-spacing-md) !important;
+    background: var(--helix-color-surface-secondary-default) !important;
+    color: var(--helix-color-text-base-white) !important;
+    border: 2px solid var(--helix-color-border-secondary-default) !important;
+    padding: var(--helix-spacing-30) var(--helix-spacing-50) !important;
     font-weight: 500 !important;
     transition: all 0.2s ease !important;
 }
 
 :deep(.button.button--secondary:hover) {
-    background: var(--my-primary-color) !important;
-    border-color: var(--my-primary-color) !important;
+    background: var(--helix-color-surface-primary-default) !important;
+    border-color: var(--helix-color-border-primary-default) !important;
     transform: translateY(-1px) !important;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !important;
+    box-shadow: 0 4px 6px var(--helix-color-shadow-neutral-md-01),
+        0 2px 4px var(--helix-color-shadow-neutral-md-02) !important;
 }
 </style>

@@ -11,6 +11,10 @@ public/
 temp/
 *.tsbuildinfo
 
+# Generated files (keep for reference but could be regenerated)
+src/styles/helix-fkui-bridge.scss
+tools/fkui-css-variables.txt
+
 # Jest output
 .jest-cache/
 coverage/
