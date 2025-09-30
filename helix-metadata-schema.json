@@ -1,0 +1,382 @@
+{
+    "_description": "HELIX DESIGN TOKENS METADATA STRUKTUR - För 100% korrekt FKUI mappning via Figma API",
+    "helix": {
+        "metadata": {
+            "version": "2.0.0",
+            "generated": "2025-09-30T10:00:00Z",
+            "figma": {
+                "fileKey": "abc123",
+                "nodeId": "456:789"
+            }
+        },
+
+        // === SEMANTISKA ROLLER ===
+        "semantic": {
+            "color": {
+                // PRIMARY SYSTEM
+                "primary": {
+                    "role": "brand-primary", // ← Semantisk roll
+                    "usage": [
+                        "buttons.primary",
+                        "headers.main",
+                        "links.primary",
+                        "focus-states"
+                    ],
+                    "context": ["interactive", "brand", "emphasis"],
+                    "accessibility": {
+                        "contrast": {
+                            "white": 4.5,
+                            "light-backgrounds": 3.0
+                        }
+                    },
+                    "values": {
+                        "default": "--helix-color-pink-900",
+                        "hover": "--helix-color-pink-950",
+                        "active": "--helix-color-pink-800",
+                        "disabled": "--helix-color-gray-300"
+                    },
+
+                    // ← KRITISK: Explicita FKUI mappningar
+                    "fkui-mappings": {
+                        "exact": [
+                            "--f-background-button-primary",
+                            "--f-background-pageheader-primary",
+                            "--f-color-primary-strong"
+                        ],
+                        "contextual": {
+                            "buttons": [
+                                "--f-background-button-primary",
+                                "--f-background-button-primary-hover"
+                            ],
+                            "headers": ["--f-background-pageheader-primary"],
+                            "text": [
+                                "--f-text-color-primary",
+                                "--f-font-color-primary"
+                            ],
+                            "borders": ["--f-border-color-primary-default"],
+                            "icons": ["--f-icon-color-primary"]
+                        }
+                    }
+                },
+
+                // SUCCESS SYSTEM
+                "success": {
+                    "role": "feedback-positive",
+                    "usage": [
+                        "badges.success",
+                        "alerts.success",
+                        "validation.valid"
+                    ],
+                    "context": ["feedback", "status", "confirmation"],
+                    "values": {
+                        "default": "--helix-color-green-600",
+                        "light": "--helix-color-green-50",
+                        "strong": "--helix-color-green-800"
+                    },
+                    "fkui-mappings": {
+                        "exact": [
+                            "--f-background-badge-success",
+                            "--f-color-success-medium",
+                            "--f-border-color-success"
+                        ],
+                        "contextual": {
+                            "badges": ["--f-background-badge-success"],
+                            "text": ["--f-text-color-success"],
+                            "borders": ["--f-border-color-success"],
+                            "icons": ["--f-icon-color-success"]
+                        }
+                    }
+                },
+
+                // ERROR SYSTEM
+                "error": {
+                    "role": "feedback-negative",
+                    "usage": [
+                        "badges.error",
+                        "alerts.error",
+                        "validation.invalid"
+                    ],
+                    "context": ["feedback", "status", "warning"],
+                    "values": {
+                        "default": "--helix-color-red-600",
+                        "light": "--helix-color-red-50",
+                        "strong": "--helix-color-red-700"
+                    },
+                    "fkui-mappings": {
+                        "exact": [
+                            "--f-background-badge-error",
+                            "--f-color-error-medium",
+                            "--f-border-color-error"
+                        ]
+                    }
+                }
+            },
+
+            // === SPACING SYSTEM ===
+            "spacing": {
+                "component-padding": {
+                    "role": "internal-spacing",
+                    "usage": [
+                        "buttons.padding",
+                        "inputs.padding",
+                        "cards.padding"
+                    ],
+                    "values": {
+                        "sm": "--helix-spacing-sm", // 12px
+                        "md": "--helix-spacing-md", // 16px
+                        "lg": "--helix-spacing-lg" // 20px
+                    },
+                    "fkui-mappings": {
+                        "buttons": [
+                            "--f-button-primary-padding",
+                            "--f-button-secondary-padding",
+                            "--f-button-tertiary-padding"
+                        ],
+                        "inputs": ["--f-input-padding"],
+                        "panels": ["--f-panel-padding"]
+                    }
+                },
+
+                "layout-spacing": {
+                    "role": "external-spacing",
+                    "usage": ["margins", "gaps", "layout-flow"],
+                    "values": {
+                        "xs": "--helix-spacing-xs", // 8px
+                        "sm": "--helix-spacing-sm", // 12px
+                        "md": "--helix-spacing-md", // 16px
+                        "lg": "--helix-spacing-lg", // 20px
+                        "xl": "--helix-spacing-xl" // 24px
+                    },
+                    "fkui-mappings": {
+                        "margins": ["--f-margin", "--f-margin-component"],
+                        "gaps": [
+                            "--f-space-small",
+                            "--f-space-medium",
+                            "--f-space-large"
+                        ]
+                    }
+                }
+            },
+
+            // === BORDER RADIUS SYSTEM ===
+            "radius": {
+                "interactive": {
+                    "role": "interactive-elements",
+                    "usage": ["buttons", "inputs", "badges"],
+                    "values": {
+                        "sm": "--helix-radius-sm", // 4px
+                        "md": "--helix-radius-md", // 8px
+                        "lg": "--helix-radius-lg" // 12px
+                    },
+                    "fkui-mappings": {
+                        "buttons": ["--f-button-border-radius"],
+                        "inputs": ["--f-input-border-radius"],
+                        "badges": ["--f-badge-border-radius"]
+                    }
+                },
+
+                "containers": {
+                    "role": "layout-containers",
+                    "usage": ["cards", "panels", "modals"],
+                    "values": {
+                        "md": "--helix-radius-md", // 8px
+                        "lg": "--helix-radius-lg", // 12px
+                        "xl": "--helix-radius-xl" // 16px
+                    },
+                    "fkui-mappings": {
+                        "panels": ["--f-panel-border-radius"],
+                        "modals": ["--f-modal-border-radius"],
+                        "cards": ["--f-card-border-radius"]
+                    }
+                }
+            },
+
+            // === TYPOGRAPHY SYSTEM ===
+            "typography": {
+                "body": {
+                    "role": "content-text",
+                    "usage": ["paragraphs", "lists", "descriptions"],
+                    "values": {
+                        "family": "--helix-typography-font-family-font-family-body",
+                        "size-sm": "--helix-typography-font-size-text-sm", // 14px
+                        "size-md": "--helix-typography-font-size-text-md", // 16px
+                        "size-lg": "--helix-typography-font-size-text-lg" // 18px
+                    },
+                    "fkui-mappings": {
+                        "family": ["--f-font-family"],
+                        "sizes": [
+                            "--f-font-size-default",
+                            "--f-font-size-standard"
+                        ]
+                    }
+                },
+
+                "headings": {
+                    "role": "hierarchical-headings",
+                    "usage": ["h1", "h2", "h3", "section-headers"],
+                    "values": {
+                        "family": "--helix-typography-font-family-font-family-display",
+                        "size-lg": "--helix-typography-font-size-display-sm", // 30px
+                        "size-xl": "--helix-typography-font-size-display-md" // 36px
+                    },
+                    "fkui-mappings": {
+                        "family": ["--f-font-family-heading"],
+                        "sizes": [
+                            "--f-font-size-h1",
+                            "--f-font-size-h2",
+                            "--f-font-size-h3"
+                        ]
+                    }
+                }
+            },
+
+            // === SHADOW SYSTEM ===
+            "elevation": {
+                "interactive": {
+                    "role": "interactive-feedback",
+                    "usage": ["buttons.hover", "focus-states", "active-states"],
+                    "values": {
+                        "sm": "0 1px 2px var(--helix-color-shadow-neutral-sm-01)",
+                        "md": "0 4px 6px var(--helix-color-shadow-neutral-md-01)"
+                    },
+                    "fkui-mappings": {
+                        "buttons": [
+                            "--f-button-shadow",
+                            "--f-button-shadow-hover"
+                        ],
+                        "focus": ["--f-focus-box-shadow"]
+                    }
+                },
+
+                "containers": {
+                    "role": "layering-depth",
+                    "usage": ["modals", "dropdowns", "tooltips"],
+                    "values": {
+                        "md": "0 4px 6px var(--helix-color-shadow-neutral-md-01), 0 2px 4px var(--helix-color-shadow-neutral-md-02)",
+                        "lg": "0 10px 15px var(--helix-color-shadow-neutral-lg-01), 0 4px 6px var(--helix-color-shadow-neutral-lg-02)",
+                        "xl": "0 20px 25px var(--helix-color-shadow-neutral-xl-01), 0 10px 10px var(--helix-color-shadow-neutral-xl-02)"
+                    },
+                    "fkui-mappings": {
+                        "modals": ["--f-box-modal-shadow"],
+                        "dropdowns": ["--f-dropdown-shadow"],
+                        "panels": ["--f-panel-shadow"]
+                    }
+                }
+            }
+        },
+
+        // === KOMPONENT-SPECIFIKA MAPPNINGAR ===
+        "components": {
+            "buttons": {
+                "primary": {
+                    "helix-tokens": {
+                        "background": "--helix-color-surface-primary-default",
+                        "text": "--helix-color-text-base-white",
+                        "border": "--helix-color-border-primary-default",
+                        "padding": "--helix-spacing-md",
+                        "radius": "--helix-radius-md",
+                        "shadow": "var(--helix-elevation-interactive-sm)"
+                    },
+                    "fkui-variables": [
+                        "--f-background-button-primary",
+                        "--f-text-color-button-primary",
+                        "--f-border-color-button-primary",
+                        "--f-button-primary-padding",
+                        "--f-button-border-radius",
+                        "--f-button-shadow"
+                    ]
+                },
+
+                "secondary": {
+                    "helix-tokens": {
+                        "background": "--helix-color-surface-secondary-default",
+                        "text": "--helix-color-text-neutral-default",
+                        "border": "--helix-color-border-secondary-default"
+                    },
+                    "fkui-variables": [
+                        "--f-background-button-secondary",
+                        "--f-text-color-button-secondary",
+                        "--f-border-color-button-secondary"
+                    ]
+                }
+            },
+
+            "badges": {
+                "success": {
+                    "helix-tokens": {
+                        "background": "--helix-color-surface-success-default",
+                        "text": "--helix-color-text-base-white",
+                        "border": "--helix-color-border-success-default"
+                    },
+                    "fkui-variables": [
+                        "--f-background-badge-success",
+                        "--f-text-color-badge-success",
+                        "--f-border-color-badge-success"
+                    ]
+                },
+
+                "error": {
+                    "helix-tokens": {
+                        "background": "--helix-color-surface-error-default",
+                        "text": "--helix-color-text-base-white",
+                        "border": "--helix-color-border-error-default"
+                    },
+                    "fkui-variables": [
+                        "--f-background-badge-error",
+                        "--f-text-color-badge-error",
+                        "--f-border-color-badge-error"
+                    ]
+                }
+            },
+
+            "headers": {
+                "page-header": {
+                    "helix-tokens": {
+                        "background": "--helix-color-surface-primary-default",
+                        "text": "--helix-color-text-base-white",
+                        "shadow": "var(--helix-elevation-containers-md)"
+                    },
+                    "fkui-variables": [
+                        "--f-background-pageheader-primary",
+                        "--f-text-color-pageheader-primary",
+                        "--f-pageheader-shadow"
+                    ]
+                }
+            }
+        },
+
+        // === AUTOMATION RULES ===
+        "automation": {
+            "mapping-patterns": [
+                {
+                    "pattern": "buttons.primary.background",
+                    "helix": "--helix-color-surface-primary-default",
+                    "fkui-match": "/--f-background-button-primary/"
+                },
+                {
+                    "pattern": "feedback.success.background",
+                    "helix": "--helix-color-surface-success-default",
+                    "fkui-match": "/--f-(background|color)-.*success/"
+                },
+                {
+                    "pattern": "spacing.component-internal",
+                    "helix": "--helix-spacing-md",
+                    "fkui-match": "/--f-.*-padding/"
+                }
+            ],
+
+            "fallback-strategies": [
+                {
+                    "category": "colors",
+                    "unmatched-strategy": "neutral-default",
+                    "helix-fallback": "--helix-color-surface-neutral-default"
+                },
+                {
+                    "category": "spacing",
+                    "unmatched-strategy": "medium-default",
+                    "helix-fallback": "--helix-spacing-md"
+                }
+            ]
+        }
+    }
+}
