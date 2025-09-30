@@ -1,16 +1,16 @@
 # FKUI + Helix Design System Prototype
 
-En automatiserad integration mellan FKUI-komponenter och Helix designsystem med intelligent variabelmappning och 90.6% precision.
+⚠️ **Experimentell prototyp** - Automatisk mappning mellan FKUI-komponenter och Helix designsystem. Många mappningar är inte semantiskt korrekta än.
 
 ## 🎯 Översikt
 
 Detta projekt innehåller:
 
-- **Helix ↔ FKUI Bridge** - Automatisk mappning mellan designsystem (90.6% precision)
-- **467 Variabelmappningar** - Intelligenta semantiska kopplingar
-- **Vue.js Integration** - Komplett applikation med FKUI + Helix
-- **Automated Workflows** - Regenerering och uppdatering av mappningar
-- **Omfattande Dokumentation** - Teknisk guide och Figma API-integration
+- **Helix ↔ FKUI Bridge** - Automatisk variabelmappning (experimentell)
+- **467 Variabelmappningar** - Många behöver manuell justering
+- **Vue.js Integration** - Grundläggande applikation med FKUI + Helix
+- **Automated Workflows** - Verktyg för regenerering av mappningar
+- **Dokumentation** - Teknisk guide och framtida Figma API-integration
 
 ## 🚀 Snabbstart
 
@@ -61,7 +61,16 @@ src/css/
 }
 ```
 
-### 3. Starta utveckling
+### 3. ⚠️ Nuvarande Status
+
+**Detta är en experimentell prototyp med kända begränsningar:**
+
+- 🚧 Många element renderas med grå färger istället för Helix-färger
+- 🔍 Automatiska mappningar fungerar bara delvis
+- ⚙️ Kräver manuell CSS-finjustering för korrekt utseende
+- 📋 Använd som utgångspunkt, inte som färdig lösning
+
+### 4. Starta utveckling
 
 **Vue.js Applikation (App.vue):**
 
@@ -149,12 +158,18 @@ Scriptet mappar automatiskt FKUI-variabler till dina tokens baserat på användn
 | `--f-color-warning`                 | `--my-warning`        | Varningar            |
 | `--f-color-error`                   | `--my-error`          | Felmeddelanden       |
 
-### Automatisk Bridge Statistik
+### Bridge Status
 
-**Helix ↔ FKUI Bridge Generator** mappade **467 FKUI-variabler** med **90.6% precision**:
+**Helix ↔ FKUI Bridge Generator** hittade **467 FKUI-variabler**:
 
-- ✅ **Intelligenta mappningar:** 423/467 (90.6%)
-- ⚠️ **Fallback mappningar:** 44/467 (9.4%)
+- 🔍 **Automatiska mappningar:** 423/467 (algoritmen hittar något)
+- ⚠️ **Fallback till neutral:** 44/467 (generisk färg)
+- 🚧 **Många semantiskt felaktiga** (t.ex. border-width → färg)
+
+⚠️ **Nuvarande begränsningar:**
+- Många mappningar är inte visuellt korrekta
+- Algoritmen mappar allt till färger som fallback  
+- Kräver omfattande manuell justering för production-användning
 
 Variabler fördelade på kategorier:
 
