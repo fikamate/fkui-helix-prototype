@@ -1,6 +1,7 @@
 # 🎨 FKUI + Helix Design System Integration
 
-Ett intelligent system för att integrera **FKUI** med ditt **Helix designsystem** genom automatisk variabelmappning och semantisk validering.
+Ett intelligent system för att integrera **FKUI** med ditt **Helix
+designsystem** genom automatisk variabelmappning och semantisk validering.
 
 ## 🎯 Översikt
 
@@ -42,7 +43,8 @@ src/css/
 └── index.css         # Import av alla Helix-tokens
 ```
 
-**Automatisk bridge:** `src/styles/helix-fkui-bridge.scss` innehåller 467 mappningar:
+**Automatisk bridge:** `src/styles/helix-fkui-bridge.scss` innehåller 467
+mappningar:
 
 ```scss
 :root {
@@ -83,21 +85,14 @@ npm start
 # Går till http://localhost:5173 (Vite default port)
 ```
 
-**Alternativt: HTML Demo (demo.html):**
+**📝 Utveckling:**
 
-```bash
-# Enkel demo utan Vue/Vite beroenden
-python3 -m http.server 8080
-# Gå till http://localhost:8080/demo.html
-```
+Applikationen är en fullständig Vue-applikation med FKUI layout-komponenter,
+router, och interaktiva views som använder Helix designsystem genom den
+automatiska bridge-mappningen.
 
-**📝 Skillnader:**
-
-- **App.vue** - Fullständig Vue-applikation med FKUI layout-komponenter, router, och interaktiva views
-- **demo.html** - Statisk demonstration av CSS variables systemet med grundläggande HTML/CSS
-
-**⚠️ Node.js Version Problem:**
-Om `npm start` inte fungerar på grund av Node-versionen:
+**⚠️ Node.js Version Problem:** Om `npm start` inte fungerar på grund av
+Node-versionen:
 
 ```bash
 # Använd nvm för att växla till Node 22
@@ -111,26 +106,27 @@ nvm use 22
 
 ### Intelligent Semantic Mapping
 
-Bridge-systemet använder semantisk analys för att automatiskt mappa FKUI-variabler till Helix design tokens:
+Bridge-systemet använder semantisk analys för att automatiskt mappa
+FKUI-variabler till Helix design tokens:
 
 ```javascript
 // Exempel från generate-helix-fkui-bridge.js
 function mapFKUIToHelix(fkuiVar) {
   // Primary färger
-  if (varName.includes("primary") && varName.includes("background")) {
-    return "var(--helix-color-surface-primary-default)";
+  if (varName.includes('primary') && varName.includes('background')) {
+    return 'var(--helix-color-surface-primary-default)';
   }
 
   // Icon storlekar → Typography tokens
-  if (varName.includes("icon") && varName.includes("size")) {
-    if (varName.includes("large")) {
-      return "var(--helix-typography-font-size-display-xs)"; // 24px
+  if (varName.includes('icon') && varName.includes('size')) {
+    if (varName.includes('large')) {
+      return 'var(--helix-typography-font-size-display-xs)'; // 24px
     }
   }
 
   // Spacing → Helix spacing system
-  if (varName.includes("padding")) {
-    return "var(--helix-spacing-50)"; // 20px
+  if (varName.includes('padding')) {
+    return 'var(--helix-spacing-50)'; // 20px
   }
 }
 ```
@@ -140,13 +136,16 @@ function mapFKUIToHelix(fkuiVar) {
 Scriptet `generate-fkui-variables.js` gör följande:
 
 1. **Skannar FKUI** - Letar igenom alla CSS-filer i `node_modules/@fkui`
-2. **Extraherar variabler** - Hittar alla CSS custom properties (`--f-*`, `--fkds-*`)
+2. **Extraherar variabler** - Hittar alla CSS custom properties (`--f-*`,
+   `--fkds-*`)
 3. **Kategoriserar intelligent** - Sorterar i kategorier baserat på variabelnamn
-4. **Genererar mappningar** - Skapar SCSS-fil med mappningar till dina designtokens
+4. **Genererar mappningar** - Skapar SCSS-fil med mappningar till dina
+   designtokens
 
 ### Intelligent Mappning
 
-Scriptet mappar automatiskt FKUI-variabler till dina tokens baserat på användning:
+Scriptet mappar automatiskt FKUI-variabler till dina tokens baserat på
+användning:
 
 | FKUI Variabel                       | Mappas till           | Syfte                |
 | ----------------------------------- | --------------------- | -------------------- |
@@ -192,7 +191,7 @@ Variabler fördelade på kategorier:
 ```
 fkui-page-layout-proto/
 ├── README.md                                    # Denna fil
-├── demo.html                                    # Live demonstration
+
 ├── generate-fkui-variables.js                  # Huvudscript för variabelgenerering
 ├── package.json                                 # Dependencies & scripts
 ├── .nvmrc                                       # Node.js version (22.20.0)
@@ -241,12 +240,13 @@ Detta kommer att:
 
 ### Anpassa mappningslogik
 
-Du kan redigera funktionen `mapVariableToDesignToken()` i `generate-fkui-variables.js` för att ändra hur variabler mappas:
+Du kan redigera funktionen `mapVariableToDesignToken()` i
+`generate-fkui-variables.js` för att ändra hur variabler mappas:
 
 ```javascript
 // Exempel: Alla button-variabler ska använda accent-färg
-if (varName.includes("button")) {
-  return "--my-accent-color";
+if (varName.includes('button')) {
+  return '--my-accent-color';
 }
 ```
 
@@ -304,14 +304,14 @@ function extractAllCSSVariables() {
         if (rule.style) {
           for (let i = 0; i < rule.style.length; i++) {
             const prop = rule.style[i];
-            if (prop.startsWith("--")) {
+            if (prop.startsWith('--')) {
               allVars.add(prop);
             }
           }
         }
       }
     } catch (e) {
-      console.log("Kunde inte läsa stylesheet:", sheet.href);
+      console.log('Kunde inte läsa stylesheet:', sheet.href);
     }
   }
 
@@ -320,29 +320,29 @@ function extractAllCSSVariables() {
 
 // Kör och visa resultat
 const vars = extractAllCSSVariables();
-console.log("Alla CSS Variables:", vars);
+console.log('Alla CSS Variables:', vars);
 
 // Filtrera på färg/bakgrund
 const colorVars = vars.filter(
-  (v) => v.includes("background") || v.includes("color")
+  (v) => v.includes('background') || v.includes('color')
 );
-console.log("Färg/Bakgrund vars:", colorVars);
+console.log('Färg/Bakgrund vars:', colorVars);
 ```
 
 ### Inspektera specifika element
 
 ```javascript
 // Hitta alla variabler på page header
-const header = document.querySelector("f-page-header");
+const header = document.querySelector('f-page-header');
 const style = getComputedStyle(header);
 const headerVars = [];
 for (let i = 0; i < style.length; i++) {
   const prop = style[i];
-  if (prop.startsWith("--")) {
+  if (prop.startsWith('--')) {
     headerVars.push(`${prop}: ${style.getPropertyValue(prop)}`);
   }
 }
-console.log("Page Header Variables:", headerVars);
+console.log('Page Header Variables:', headerVars);
 ```
 
 ## 🎨 Verifierade FKUI Variabler
@@ -434,12 +434,12 @@ I `App.vue` använder vi Shadow Parts och `:deep()` selectors:
 
 ```scss
 /* FKUI tema (måste komma först) */
-@use "@fkui/theme-default";
-@use "@fkui/design";
-@use "@fkui/design/lib/fonts.css";
+@use '@fkui/theme-default';
+@use '@fkui/design';
+@use '@fkui/design/lib/fonts.css';
 
 /* Importera automatiskt genererade overrides */
-@import "./styles/generated-fkui-overrides.scss";
+@import './styles/generated-fkui-overrides.scss';
 
 /* Resterande anpassningar... */
 ```
@@ -448,7 +448,8 @@ I `App.vue` använder vi Shadow Parts och `:deep()` selectors:
 
 ### Problem: Node.js version
 
-**Fel:** "You are using Node.js X.X.X. Vite requires Node.js version 20.19+ or 22.12+"
+**Fel:** "You are using Node.js X.X.X. Vite requires Node.js version 20.19+ or
+22.12+"
 
 **Lösning:**
 
@@ -465,10 +466,12 @@ export PATH="$HOME/.nvm/versions/node/v22.20.0/bin:$PATH"
 
 ### Problem: Ändringar syns inte
 
-1. **Kontrollera import:** Se till att `generated-fkui-overrides.scss` importeras i `local.scss`
+1. **Kontrollera import:** Se till att `generated-fkui-overrides.scss`
+   importeras i `local.scss`
 2. **CSS specificitet:** Lägg till `!important` om nödvändigt
 3. **Browser cache:** Hårt refresh med Cmd/Ctrl + Shift + R
-4. **DevTools:** Inspektera elementet för att se vilka variabler som faktiskt används
+4. **DevTools:** Inspektera elementet för att se vilka variabler som faktiskt
+   används
 
 ### Problem: Script kraschar
 
@@ -523,22 +526,20 @@ node generate-fkui-variables.js
 
 ## 📚 Ytterligare Resurser
 
-- **FKUI Dokumentation:** [Försäkringskassan Design System](https://designsystem.forsakringskassan.se/)
-- **CSS Custom Properties:** [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)
-- **Vue.js Styling:** [Vue Style Guide](https://vuejs.org/guide/essentials/class-and-style.html)
-- **Shadow DOM & Parts:** [MDN ::part()](https://developer.mozilla.org/en-US/docs/Web/CSS/::part)
+- **FKUI Dokumentation:**
+  [Försäkringskassan Design System](https://designsystem.forsakringskassan.se/)
+- **CSS Custom Properties:**
+  [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)
+- **Vue.js Styling:**
+  [Vue Style Guide](https://vuejs.org/guide/essentials/class-and-style.html)
+- **Shadow DOM & Parts:**
+  [MDN ::part()](https://developer.mozilla.org/en-US/docs/Web/CSS/::part)
 
 ---
 
 ## 🎉 Demo
 
-Öppna `demo.html` i din webbläsare eller kör:
-
-```bash
-python3 -m http.server 8080
-# Gå till http://localhost:8080/demo.html
-```
-
-För att se en komplett demonstration av variabelsystemet med interaktiva element och färgexempel!
+Kör `npm run dev` för att se den interaktiva Vue-applikationen som visar
+FKUI-komponenter med Helix designsystem!
 
 **Lycka till med ditt FKUI-projekt! 🚀**
