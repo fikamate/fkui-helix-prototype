@@ -2,6 +2,7 @@
   "name": "@fkui/example-page-layout",
   "version": "6.20.0",
   "private": true,
+  "type": "module",
   "description": "An example and testbed for application layout components",
   "homepage": "https://designsystem.forsakringskassan.se/",
   "bugs": "https://github.com/Forsakringskassan/designsystem/issues",
@@ -16,18 +17,23 @@
     "prebuild": "vue-tsc",
     "build": "vite build --mode development",
     "clean": "rimraf dist",
-    "start": "vite --"
+    "start": "vite --",
+    "generate-fkui-vars": "node generate-fkui-variables.js",
+    "generate-helix-bridge": "node generate-helix-fkui-bridge.js",
+    "generate-all": "npm run generate-fkui-vars && npm run generate-helix-bridge"
   },
   "dependencies": {
     "@fkui/design": "6.20.0",
     "@fkui/icon-lib-default": "6.20.0",
     "@fkui/theme-default": "6.20.0",
-    "@fkui/vue": "6.20.0",
     "vue": "3.5.22",
     "vue-router": "4.5.1"
   },
   "devDependencies": {
+    "@fkui/tsconfig": "^6.20.0",
+    "@fkui/vue": "^6.20.0",
     "@vitejs/plugin-vue": "6.0.1",
+    "sass-embedded": "^1.93.2",
     "vite": "7.1.7"
   },
   "engines": {
