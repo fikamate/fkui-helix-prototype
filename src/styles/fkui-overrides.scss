@@ -1,0 +1,63 @@
+/* FKUI Theme Overrides */
+/* Mappar dina designvariabler till FKUI:s CSS custom properties */
+
+:root {
+    /* Override FKUI primary colors */
+    --f-color-primary: var(--brand-primary);
+    --f-color-secondary: var(--brand-secondary);
+
+    /* Override FKUI spacing (om de använder liknande variabler) */
+    --f-spacing-xs: var(--spacing-xs);
+    --f-spacing-sm: var(--spacing-sm);
+    --f-spacing-md: var(--spacing-md);
+    --f-spacing-lg: var(--spacing-lg);
+    --f-spacing-xl: var(--spacing-xl);
+
+    /* Override FKUI typography */
+    --f-font-family: var(--font-family-primary);
+    --f-font-size-sm: var(--font-size-sm);
+    --f-font-size-base: var(--font-size-base);
+    --f-font-size-lg: var(--font-size-lg);
+
+    /* Override FKUI backgrounds */
+    --f-background-color: var(--color-background);
+    --f-surface-color: var(--color-surface);
+
+    /* Override FKUI text colors */
+    --f-text-color-primary: var(--color-text-primary);
+    --f-text-color-secondary: var(--color-text-secondary);
+}
+
+/* Component-specific overrides */
+.f-navigation-menu {
+    --f-nav-background: var(--color-surface);
+    --f-nav-text-color: var(--color-text-primary);
+    --f-nav-active-color: var(--brand-primary);
+}
+
+.f-details-panel {
+    --f-panel-background: var(--color-background);
+    --f-panel-border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-md);
+}
+
+.f-page-header {
+    --f-header-background: var(--brand-primary);
+    --f-header-text-color: white;
+}
+
+/* Specifika FKUI variabler som används i komponenter */
+:root {
+    /* Page header variabler */
+    --f-background-pageheader-primary: var(--brand-primary) !important;
+    --f-background-pageheader-secondary: var(--brand-secondary) !important;
+
+    /* Andra viktiga FKUI bakgrunder */
+    --f-background-button-primary: var(--brand-primary) !important;
+    --f-background-button-primary-hover: var(--brand-secondary) !important;
+
+    /* FKDS variabler för layout */
+    --fkds-color-background-secondary: var(--color-surface) !important;
+    --fkds-color-text-primary: var(--color-text-primary) !important;
+    --fkds-color-text-inverted: white !important;
+}
