@@ -1,50 +1,63 @@
-# FKUI Page Layout med Custom Variables System
+# FKUI + Helix Design System Prototype
 
-En exempel applikation som demonstrerar FKUI:s layout-komponenter med ett automatiserat system för att överskriva CSS-variabler med egna designtokens.
+En automatiserad integration mellan FKUI-komponenter och Helix designsystem med intelligent variabelmappning och 90.6% precision.
 
 ## 🎯 Översikt
 
 Detta projekt innehåller:
 
-- **FKUI Page Layout Demonstration** - Visar hur FKUI:s layout-komponenter fungerar
-- **Automatiskt CSS Variables System** - Script som mappar 467+ FKUI-variabler till dina designtokens
-- **Live Demo** - Interaktiv demonstration av variabelsystemet
-- **Omfattande Dokumentation** - Allt du behöver för att komma igång
+- **Helix ↔ FKUI Bridge** - Automatisk mappning mellan designsystem (90.6% precision)
+- **467 Variabelmappningar** - Intelligenta semantiska kopplingar  
+- **Vue.js Integration** - Komplett applikation med FKUI + Helix
+- **Automated Workflows** - Regenerering och uppdatering av mappningar
+- **Omfattande Dokumentation** - Teknisk guide och Figma API-integration
 
 ## 🚀 Snabbstart
 
 ### 1. Installation & Setup
 
 ```bash
-# Klona eller ladda ner projektet
-cd fkui-page-layout-proto
+# Klona projektet
+git clone https://github.com/fikamate/fkui-helix-prototype.git
+cd fkui-helix-prototype
 
-# Installera dependencies (kräver Node.js 20+)
+# Kräver Node.js 22+ (använd nvm)
+nvm use 22
+
+# Installera dependencies
 npm install
 
-# Generera FKUI variable mappings
-npm run generate-fkui-vars
+# Generera Helix ↔ FKUI bridge
+npm run generate-helix-bridge
 ```
 
-### 2. Anpassa dina designvariabler
+### 2. Helix Design System är förinstallerat
 
-Öppna `src/styles/generated-fkui-overrides.scss` och redigera `:root` sektionen:
+Helix foundation och semantic tokens finns redan i `src/css/`:
+
+```
+src/css/
+├── foundation.css    # Bas-tokens (färger, spacing, typografi)
+├── semantic.css      # Semantiska tokens (surface, text, border)  
+└── index.css         # Import av alla Helix-tokens
+```
+
+**Automatisk bridge:** `src/styles/helix-fkui-bridge.scss` innehåller 467 mappningar:
 
 ```scss
 :root {
-  /* Dina egna färger */
-  --my-primary-color: #ff6b35; /* Din primärfärg */
-  --my-secondary-color: #004e89; /* Din sekundärfärg */
-  --my-accent-color: #1a535c; /* Accentfärg */
-  --my-success: #10b981; /* Success färg */
-  --my-warning: #f59e0b; /* Warning färg */
-  --my-error: #ef4444; /* Error färg */
-
-  /* Övriga designelement */
-  --my-font-family: "Inter", system-ui, sans-serif;
-  --my-spacing-md: 1rem;
-  --my-border-radius: 0.375rem;
-  --my-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+  /* FKUI Primary → Helix Primary */
+  --f-background-pageheader-primary: var(--helix-color-surface-primary-default);
+  --f-background-button-primary: var(--helix-color-surface-primary-default);
+  
+  /* FKUI Success → Helix Success */
+  --f-background-badge-success: var(--helix-color-surface-success-default);
+  --f-color-success-medium: var(--helix-color-text-success-default);
+  
+  /* Icon storlekar → Helix typografi */
+  --f-icon-size-large: var(--helix-typography-font-size-display-xs); /* 24px */
+  --f-icon-size-medium: var(--helix-typography-font-size-text-xl);   /* 20px */
+  --f-icon-size-small: var(--helix-typography-font-size-text-md);    /* 16px */
 }
 ```
 
@@ -85,7 +98,33 @@ nvm use 22
 ./start-vue-app.sh
 ```
 
-## 🛠️ CSS Variables System - Så fungerar det
+## 🛠️ Helix ↔ FKUI Bridge System
+
+### Intelligent Semantic Mapping
+
+Bridge-systemet använder semantisk analys för att automatiskt mappa FKUI-variabler till Helix design tokens:
+
+```javascript
+// Exempel från generate-helix-fkui-bridge.js
+function mapFKUIToHelix(fkuiVar) {
+  // Primary färger
+  if (varName.includes("primary") && varName.includes("background")) {
+    return "var(--helix-color-surface-primary-default)";
+  }
+  
+  // Icon storlekar → Typography tokens  
+  if (varName.includes("icon") && varName.includes("size")) {
+    if (varName.includes("large")) {
+      return "var(--helix-typography-font-size-display-xs)"; // 24px
+    }
+  }
+  
+  // Spacing → Helix spacing system
+  if (varName.includes("padding")) {
+    return "var(--helix-spacing-50)"; // 20px
+  }
+}
+```
 
 ### Automatisk Variable Discovery
 
@@ -110,9 +149,14 @@ Scriptet mappar automatiskt FKUI-variabler till dina tokens baserat på användn
 | `--f-color-warning`                 | `--my-warning`        | Varningar            |
 | `--f-color-error`                   | `--my-error`          | Felmeddelanden       |
 
-### Statistik (senaste generering)
+### Automatisk Bridge Statistik
 
-Systemet hittade **467 FKUI CSS-variabler** fördelade på:
+**Helix ↔ FKUI Bridge Generator** mappade **467 FKUI-variabler** med **90.6% precision**:
+
+- ✅ **Intelligenta mappningar:** 423/467 (90.6%)
+- ⚠️ **Fallback mappningar:** 44/467 (9.4%)
+
+Variabler fördelade på kategorier:
 
 - **Colors**: 216 variabler (primära, sekundära, status-färger)
 - **Backgrounds**: 107 variabler (headers, panels, buttons)
@@ -329,10 +373,11 @@ Dessa variabler har testats och fungerar:
 ```json
 {
   "scripts": {
-    "start": "vite --", // Starta dev server
+    "start": "vite", // Starta Vue dev server
     "build": "vite build --mode development", // Bygga för produktion
-    "generate-fkui-vars": "node generate-fkui-variables.js", // Generera variabler
-    "clean": "rimraf dist" // Rensa build
+    "generate-helix-bridge": "node generate-helix-fkui-bridge.js", // Regenerera bridge
+    "generate-all": "npm run generate-fkui-vars && npm run generate-helix-bridge", // Alla scripts
+    "generate-fkui-vars": "node generate-fkui-variables.js" // Legacy FKUI scanner
   }
 }
 ```
