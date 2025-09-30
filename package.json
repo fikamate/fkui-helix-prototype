@@ -14,15 +14,12 @@
   "license": "MIT",
   "author": "Försäkringskassan",
   "scripts": {
-    "dev": "vite --config config/vite.config.ts",
+    "dev": "vite",
     "prebuild": "vue-tsc --project config/tsconfig.json",
-    "build": "vite build --mode development --config config/vite.config.ts",
+    "build": "vite build",
     "clean": "rimraf dist",
     "start": "node scripts/start-vue.js",
-    "generate-fkui-vars": "node scripts/generate-fkui-variables.js",
-    "generate-helix-bridge": "node scripts/generate-helix-fkui-bridge.js",
-    "generate-figma-bridge": "node scripts/generate-figma-enhanced-bridge.js",
-    "generate-all": "npm run generate-fkui-vars && npm run generate-helix-bridge"
+    "generate-helix-bridge": "node scripts/generate-helix-fkui-bridge.js"
   },
   "dependencies": {
     "@fkui/design": "6.20.0",

@@ -2,7 +2,8 @@
 
 ## 🎯 **REVOLUTIONEN: Automatisk designsystem-integration!**
 
-Du har nu ett **fullständigt automatiserat system** som mappar ditt Helix-designsystem till FKUI-komponenter. Ingen manuell CSS krävs längre!
+Du har nu ett **fullständigt automatiserat system** som mappar ditt
+Helix-designsystem till FKUI-komponenter. Ingen manuell CSS krävs längre!
 
 ## 📊 **Vad systemet gjorde:**
 
@@ -149,10 +150,10 @@ src/
 
 ```scss
 /* Du behövde ändra 50+ variabler manuellt: */
---my-primary-color: #2563eb;
---f-background-button-primary: var(--my-primary-color);
---f-background-pageheader-primary: var(--my-primary-color);
---f-icon-color-primary: var(--my-primary-color);
+--helix-color-surface-primary-default: #2563eb;
+--f-background-button-primary: var(--helix-color-surface-primary-default);
+--f-background-pageheader-primary: var(--helix-color-surface-primary-default);
+--f-icon-color-primary: var(--helix-color-icon-primary-default);
 /* + 47 fler... */
 ```
 
@@ -171,9 +172,9 @@ src/
 
 ```scss
 /* Manuellt hitta och ändra alla radius-variabler */
---my-border-radius: 8px;
---f-border-radius-medium: var(--my-border-radius);
---f-border-radius-small: var(--my-border-radius);
+--helix-radius-md: 8px;
+--f-border-radius-medium: var(--helix-radius-md);
+--f-border-radius-small: var(--helix-radius-sm);
 /* + många fler... */
 ```
 
@@ -250,4 +251,5 @@ npm run generate-all           # Vid nya FKUI-komponenter
 
 ---
 
-**🎉 Du har nu ett professionellt, skalbart designsystem som automatiskt håller FKUI och Helix synkroniserade!**
+**🎉 Du har nu ett professionellt, skalbart designsystem som automatiskt håller
+FKUI och Helix synkroniserade!**

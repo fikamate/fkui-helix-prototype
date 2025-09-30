@@ -1,209 +1,211 @@
 /* FKUI-temat måste komma först med @use */
-@use "@fkui/theme-default";
-@use "@fkui/design";
-@use "@fkui/design/lib/fonts.css";
+@use '@fkui/theme-default';
+@use '@fkui/design';
+@use '@fkui/design/lib/fonts.css';
 
 /* Importera Helix ↔ FKUI intelligent bridge */
-@import "./styles/helix-fkui-bridge.scss";
+@import './styles/helix-fkui-bridge.scss';
 
 /* ÄLDRE: Importera automatiskt genererade FKUI overrides (kan tas bort om Helix bridge fungerar) */
 /* @import "./styles/generated-fkui-overrides.scss"; */
 
 /* Custom Design Tokens */
 :root {
-    /* Brand Colors - mer synliga färger för att se förändringen */
-    --brand-primary: #ff6b35;
-    --brand-secondary: #004e89;
-    --brand-accent: #1a535c;
+  /* Brand Colors - mer synliga färger för att se förändringen */
+  --brand-primary: #ff6b35;
+  --brand-secondary: #004e89;
+  --brand-accent: #1a535c;
 
-    /* Neutral Colors */
-    --color-background: #f0f9ff;
-    --color-surface: #e0f2fe;
-    --color-text-primary: #0f172a;
-    --color-text-secondary: #475569;
+  /* Neutral Colors */
+  --color-background: #f0f9ff;
+  --color-surface: #e0f2fe;
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #475569;
 
-    /* Spacing */
-    --spacing-xs: 0.25rem;
-    --spacing-sm: 0.5rem;
-    --spacing-md: 1rem;
-    --spacing-lg: 1.5rem;
-    --spacing-xl: 2rem;
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
 
-    /* Typography */
-    --font-family-primary: "Inter", system-ui, sans-serif;
-    --font-size-sm: 0.875rem;
-    --font-size-base: 1rem;
-    --font-size-lg: 1.125rem;
-    --font-size-xl: 1.25rem;
+  /* Typography */
+  --font-family-primary: 'Inter', system-ui, sans-serif;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
 
-    /* Border Radius */
-    --border-radius-sm: 0.25rem;
-    --border-radius-md: 0.5rem;
-    --border-radius-lg: 0.75rem;
+  /* Border Radius */
+  --border-radius-sm: 0.25rem;
+  --border-radius-md: 0.5rem;
+  --border-radius-lg: 0.75rem;
 
-    /* Shadows */
-    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
 
-    /* FKUI Overrides - mappar dina designvariabler till FKUI:s CSS custom properties */
-    --f-color-primary: var(--brand-primary);
-    --f-color-secondary: var(--brand-secondary);
-    --f-spacing-xs: var(--spacing-xs);
-    --f-spacing-sm: var(--spacing-sm);
-    --f-spacing-md: var(--spacing-md);
-    --f-spacing-lg: var(--spacing-lg);
-    --f-spacing-xl: var(--spacing-xl);
-    --f-font-family: var(--font-family-primary);
-    --f-font-size-sm: var(--font-size-sm);
-    --f-font-size-base: var(--font-size-base);
-    --f-font-size-lg: var(--font-size-lg);
-    --f-background-color: var(--color-background);
-    --f-surface-color: var(--color-surface);
-    --f-text-color-primary: var(--color-text-primary);
-    --f-text-color-secondary: var(--color-text-secondary);
+  /* FKUI Overrides - mappar dina designvariabler till FKUI:s CSS custom properties */
+  --f-color-primary: var(--brand-primary);
+  --f-color-secondary: var(--brand-secondary);
+  --f-spacing-xs: var(--spacing-xs);
+  --f-spacing-sm: var(--spacing-sm);
+  --f-spacing-md: var(--spacing-md);
+  --f-spacing-lg: var(--spacing-lg);
+  --f-spacing-xl: var(--spacing-xl);
+  --f-font-family: var(--font-family-primary);
+  --f-font-size-sm: var(--font-size-sm);
+  --f-font-size-base: var(--font-size-base);
+  --f-font-size-lg: var(--font-size-lg);
+  --f-background-color: var(--color-background);
+  --f-surface-color: var(--color-surface);
+  --f-text-color-primary: var(--color-text-primary);
+  --f-text-color-secondary: var(--color-text-secondary);
 }
 
 /* Component-specific overrides */
 .f-navigation-menu {
-    --f-nav-background: var(--color-surface);
-    --f-nav-text-color: var(--color-text-primary);
-    --f-nav-active-color: var(--brand-primary);
+  --f-nav-background: var(--color-surface);
+  --f-nav-text-color: var(--color-text-primary);
+  --f-nav-active-color: var(--brand-primary);
 }
 
 .f-details-panel {
-    --f-panel-background: var(--color-background);
-    --f-panel-border-radius: var(--border-radius-md);
-    box-shadow: var(--shadow-md);
+  --f-panel-background: var(--color-background);
+  --f-panel-border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-md);
 }
 
 .f-page-header {
-    --f-header-background: var(--brand-primary);
-    --f-header-text-color: white;
+  --f-header-background: var(--brand-primary);
+  --f-header-text-color: white;
 }
 
 html,
 body {
-    margin: 0;
-    padding: 0;
-    font-family: var(--font-family-primary);
-    background-color: var(--color-background);
-    color: var(--color-text-primary);
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family-primary);
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
 }
 
 main {
-    padding: var(--spacing-md);
+  padding: var(--spacing-md);
 }
 
 /* Aggressiva overrides för att se synliga förändringar */
 .f-navigation-menu,
-[class*="f-navigation"] {
-    background-color: var(--brand-primary) !important;
-    color: white !important;
-    border-radius: var(--border-radius-md) !important;
-    padding: var(--spacing-sm) !important;
+[class*='f-navigation'] {
+  background-color: var(--brand-primary) !important;
+  color: white !important;
+  border-radius: var(--border-radius-md) !important;
+  padding: var(--spacing-sm) !important;
 }
 
 .f-navigation-menu a,
 .f-navigation-menu button,
-[class*="f-navigation"] a,
-[class*="f-navigation"] button {
-    color: white !important;
-    background-color: transparent !important;
-    border: 2px solid transparent !important;
-    border-radius: var(--border-radius-sm) !important;
-    padding: var(--spacing-xs) var(--spacing-sm) !important;
+[class*='f-navigation'] a,
+[class*='f-navigation'] button {
+  color: white !important;
+  background-color: transparent !important;
+  border: 2px solid transparent !important;
+  border-radius: var(--border-radius-sm) !important;
+  padding: var(--spacing-xs) var(--spacing-sm) !important;
 }
 
 .f-navigation-menu a:hover,
 .f-navigation-menu button:hover,
-[class*="f-navigation"] a:hover,
-[class*="f-navigation"] button:hover {
-    background-color: var(--brand-secondary) !important;
-    border-color: white !important;
+[class*='f-navigation'] a:hover,
+[class*='f-navigation'] button:hover {
+  background-color: var(--brand-secondary) !important;
+  border-color: white !important;
 }
 
 /* Page header overrides */
 .f-page-header,
-[class*="f-page-header"] {
-    background: linear-gradient(
-        135deg,
-        var(--brand-primary),
-        var(--brand-secondary)
-    ) !important;
-    color: white !important;
-    box-shadow: var(--shadow-lg) !important;
+[class*='f-page-header'] {
+  background: linear-gradient(
+    135deg,
+    var(--brand-primary),
+    var(--brand-secondary)
+  ) !important;
+  color: white !important;
+  box-shadow: var(--shadow-lg) !important;
 }
 
 /* Panel overrides */
 .f-details-panel,
 .f-minimizable-panel,
-[class*="f-panel"] {
-    background-color: var(--color-surface) !important;
-    border: 2px solid var(--brand-accent) !important;
-    border-radius: var(--border-radius-lg) !important;
-    box-shadow: var(--shadow-md) !important;
+[class*='f-panel'] {
+  background-color: var(--color-surface) !important;
+  border: 2px solid var(--brand-accent) !important;
+  border-radius: var(--border-radius-lg) !important;
+  box-shadow: var(--shadow-md) !important;
 }
 
 /* Table overrides */
 .f-interactive-table,
-[class*="f-table"] {
-    border: 1px solid var(--brand-accent) !important;
-    border-radius: var(--border-radius-md) !important;
+[class*='f-table'] {
+  border: 1px solid var(--brand-accent) !important;
+  border-radius: var(--border-radius-md) !important;
 }
 
 .f-interactive-table th {
-    background-color: var(--brand-primary) !important;
-    color: white !important;
+  background-color: var(--brand-primary) !important;
+  color: white !important;
 }
 
 /* Logo overrides */
 .f-logo {
-    filter: hue-rotate(45deg) saturate(1.5) !important;
+  filter: hue-rotate(45deg) saturate(1.5) !important;
 }
 
 /* === SPECIFIKA OVERRIDES FÖR APP.VUE SHADOW PARTS === */
 
 /* Override för hela page layout för att säkerställa att våra färger används */
 f-page-layout {
-    /* Definiera våra custom variabler här också för shadow parts */
-    --f-background-pageheader-primary: var(--my-primary-color) !important;
-    --fkds-color-background-secondary: color-mix(
-        in srgb,
-        var(--my-primary-color) 8%,
-        #f4f4f4
-    ) !important;
-    --fkds-color-text-primary: #1b1e23 !important;
-    --fkds-color-text-inverted: #ffffff !important;
+  /* Definiera våra custom variabler här också för shadow parts */
+  --f-background-pageheader-primary: var(
+    --helix-color-surface-primary-default
+  ) !important;
+  --fkds-color-background-secondary: color-mix(
+    in srgb,
+    var(--helix-color-surface-primary-default) 8%,
+    #f4f4f4
+  ) !important;
+  --fkds-color-text-primary: #1b1e23 !important;
+  --fkds-color-text-inverted: #ffffff !important;
 }
 
 /* Direkt styling för synligare resultat */
 f-page-header {
-    background: linear-gradient(
-        135deg,
-        var(--my-primary-color),
-        var(--my-secondary-color)
-    ) !important;
-    color: white !important;
+  background: linear-gradient(
+    135deg,
+    var(--helix-color-surface-primary-default),
+    var(--helix-color-surface-secondary-default)
+  ) !important;
+  color: white !important;
 }
 
 /* Lägg till en färgad border för att se panel-områdena tydligt */
 f-resize-pane {
-    border: 2px solid var(--my-accent-color) !important;
-    margin: 4px !important;
+  border: 2px solid var(--helix-color-border-primary-default) !important;
+  margin: 4px !important;
 }
 
 /* Toolbar styling */
 .toolbar {
-    background: var(--my-primary-color) !important;
-    color: white !important;
-    padding: 12px !important;
-    border-radius: 8px !important;
+  background: var(--helix-color-surface-primary-default) !important;
+  color: white !important;
+  padding: 12px !important;
+  border-radius: 8px !important;
 }
 
 /* Context bar styling */
 x-context-bar {
-    background: var(--my-secondary-color) !important;
-    color: white !important;
-    padding: 8px !important;
+  background: var(--helix-color-surface-secondary-default) !important;
+  color: white !important;
+  padding: 8px !important;
 }
