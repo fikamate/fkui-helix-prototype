@@ -107,13 +107,46 @@ npm run analyze-component badge
 ```
 
 **Vad som händer:**
-- Läser FKUI:s SCSS-filer direkt från `node_modules/@fkui/design`
-- Extraherar alla CSS-variabler för den specifika komponenten
-- Kategoriserar variabler (background, border, text, spacing, etc.)
-- Genererar intelligent mappning till Helix Design System
-- Skapar färdig SCSS override-fil i `src/styles/components/`
+- 📁 Läser FKUI:s SCSS-filer direkt från `node_modules/@fkui/design/src/components/`
+- 🔍 Scannar `_variables.scss`, `_index.scss`, och komponent-specifika filer
+- 📊 Extraherar alla SCSS-variabler (`$textfield-color-*`, etc.)
+- 🎨 Kategoriserar automatiskt: BACKGROUND, BORDER, TEXT, ICON, SPACING
+- 🎯 Mappar intelligent till Helix tokens baserat på semantik
+- 💾 Genererar komplett SCSS override-fil med timestamps och källreferenser
 
-**Resultat:** Färdig fil som `_text-field-helix-overrides.scss` med korrekta Helix-mappningar
+**Exempel på resultat** (`_text-field-helix-overrides.scss`):
+```scss
+// BACKGROUND  
+$textfield-color-background-default: var(--helix-color-surface-primary-default);
+$textfield-color-background-disabled: var(--helix-color-surface-neutral-disabled);
+
+// BORDER
+$textfield-color-border-default: var(--helix-color-border-default);
+$textfield-color-border-error: var(--helix-color-border-error);
+
+// TEXT
+$textfield-color-text-default: var(--helix-color-text-base-default);
+$textfield-color-text-disabled: var(--helix-color-text-base-disabled);
+```
+
+**Output:** Komplett override-fil redo att importeras i ditt projekt! ✅
+
+#### 🧠 **Intelligent Mappningslogik:**
+
+Scriptet använder sofistikerad regelbaserad mappning:
+
+**FKUI-variabel** → **Helix-token** (Logik)
+- `$textfield-color-background-default` → `--helix-color-surface-primary-default` *(background + default = primary surface)*
+- `$textfield-color-background-disabled` → `--helix-color-surface-neutral-disabled` *(disabled = neutral disabled)*  
+- `$textfield-color-border-error` → `--helix-color-border-error` *(error = error border)*
+- `$textfield-color-text-disabled` → `--helix-color-text-base-disabled` *(text + disabled = disabled text)*
+
+**Kategoriseringsregler:**
+- 🎨 **BACKGROUND:** Variabler med `background` → Helix surface colors
+- 🔲 **BORDER:** Variabler med `border` → Helix border colors  
+- 📝 **TEXT:** Variabler med `text/color-text` → Helix text colors
+- 🎯 **ICON:** Variabler med `icon` → Helix icon/text colors
+- 📏 **SPACING:** Variabler med `padding/margin/space` → Helix spacing tokens
 
 ### 🔍 **extract-css-vars.js** (Legacy)
 **Syfte:** Browser-baserat debugging-verktyg för CSS-variabler
@@ -128,13 +161,33 @@ npm run analyze-component badge
    ```bash
    npm run analyze-component text-field
    ```
+   
+   **Scriptet gör följande:**
+   - 📁 Läser `/node_modules/@fkui/design/src/components/text-field/`
+   - 🔍 Hittar 3 SCSS-filer: `_variables.scss`, `_text-field.scss`, `_index.scss`
+   - 📊 Extraherar 8 SCSS-variabler (background, border, text, icon)
+   - 🎯 Skapar intelligent Helix-mappning för varje variabel
+   - 💾 Genererar `src/styles/components/_text-field-helix-overrides.scss`
 
-2. **Granska genererad override-fil:**
+2. **Granska den automatiskt genererade filen:**
    ```scss
-   // Fil skapas automatiskt: src/styles/components/_text-field-helix-overrides.scss
-   $textfield-color-background-default: var(--helix-color-surface-primary-default);
-   $textfield-color-border-default: var(--helix-color-border-default);
-   $textfield-color-text-default: var(--helix-color-text-base-default);
+   // =============================================
+   // TEXT-FIELD HELIX OVERRIDES  
+   // Genererad från FKUI SCSS-analys
+   // 2025-10-01T12:28:50.476Z
+   // =============================================
+   
+   // BACKGROUND
+   $textfield-color-background-default: var(--helix-color-surface-primary-default); // från _variables.scss
+   $textfield-color-background-disabled: var(--helix-color-surface-neutral-disabled); // från _variables.scss
+   
+   // BORDER  
+   $textfield-color-border-default: var(--helix-color-border-default); // från _variables.scss
+   $textfield-color-border-error: var(--helix-color-border-error); // från _variables.scss
+   
+   // TEXT
+   $textfield-color-text-default: var(--helix-color-text-base-default); // från _variables.scss
+   $textfield-color-text-disabled: var(--helix-color-text-base-disabled); // från _variables.scss
    ```
 
 3. **Importera i din styling:**
@@ -156,13 +209,36 @@ npm run analyze-component badge
 
 5. **Testa och finjustera:** Komponenten använder nu Helix Design System variabler automatiskt!
 
-### Tillgängliga komponenter för analys:
-- `text-field` - Textfält med etiketter och validering
+### 🔧 Anpassning och felsökning:
+
+**Om mappningen behöver justeras:**
+```scss
+// Redigera den genererade filen om behövs
+$textfield-color-background-default: var(--helix-color-surface-secondary-default); // Ändra från primary till secondary
+```
+
+**Felsökning av saknade komponenter:**
+```bash
+# Lista alla tillgängliga FKUI-komponenter
+npm run analyze-component
+# Output visar: badge, button, icon, label, text-field, tooltip, etc.
+```
+
+**Återskapa override-filer:**
+```bash
+# Scriptet överskriver alltid befintliga filer
+npm run analyze-component text-field  # Regenererar _text-field-helix-overrides.scss
+```
+
+### 📋 Tillgängliga komponenter för analys:
+- `text-field` - Textfält med etiketter och validering (✅ testat)
 - `button` - Knappar i olika stilar  
 - `badge` - Status-märken och taggar
 - `icon` - Ikoner och ikonknappar
 - `label` - Etiketter för formulärfält
 - `tooltip` - Hjälptexter och tooltips
+- `page-header` - Sidhuvuden och navigation
+- `navigation-menu` - Navigationsmenyer
 
 ## Automatiska Mappningar
 
