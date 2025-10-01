@@ -9,8 +9,7 @@
 /* Importera komponent-specifika SCSS-filer */
 @import './components/index.scss';
 
-/* ÄLDRE: Importera automatiskt genererade FKUI overrides (kan tas bort om Helix bridge fungerar) */
-/* @import "./styles/generated-fkui-overrides.scss"; */
+/* Helix bridge hanterar nu alla FKUI overrides automatiskt */
 
 /* Custom Design Tokens */
 :root {

@@ -246,7 +246,7 @@ f-page-header *,
 }
 
 /* ========================================
-   FKUI KOMPONENTER (Automatiskt från generated-fkui-overrides.scss)
+   FKUI KOMPONENTER (via Helix bridge)
    ======================================== */
 
 /* FKUI-variabler mappade till Helix (dessa mappas automatiskt via bridge) */

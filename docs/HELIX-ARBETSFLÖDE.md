@@ -91,14 +91,24 @@ npm run generate-all    # Regenererar både FKUI-scan och Helix-bridge
 
 ---
 
-## 📁 **Filstruktur efter automation:**
+## 📁 **Aktiv filstruktur (uppdaterad):**
 
 ### ✅ **AUTOMATISKT GENERERADE:**
 
 ```
 src/styles/
 ├── helix-fkui-bridge.scss     ← 🤖 HUVUDFILEN - Intelligent bridge
-└── generated-fkui-overrides.scss ← 🤖 (Äldre system, kan tas bort)
+├── fkui-css-variables-reference.scss ← 🤖 FKUI variabel-referens
+└── components/                ← 🤖 Komponent-specifika stilar
+    ├── text-field/
+    │   ├── _text-field.scss   ← Helix-anpassade text field stilar
+    │   ├── variations.scss    ← Size/state variations
+    │   └── text-field.scss    ← Index fil
+    ├── label/
+    │   ├── _label.scss        ← Helix-anpassade label stilar
+    │   └── label.scss         ← Index fil
+    └── page-layout/
+        └── page-layout.scss   ← Layout-specifika stilar
 ```
 
 ### 🎨 **DITT DESIGNSYSTEM:**
@@ -114,8 +124,11 @@ src/css/
 
 ```
 src/
-├── local.scss                ← 🛠️ Imports och global styling
-└── App.vue                   ← 🛠️ Layout-specifik styling (sällan behövd nu!)
+├── local.scss                ← 🛠️ Huvudimport-fil för alla stilar
+├── components/
+│   ├── index.scss            ← 🛠️ Import av komponent-stilar
+│   └── _all.scss             ← 🛠️ Forward av alla komponenter
+└── App.vue                   ← 🛠️ Layout-specifik styling
 ```
 
 ---
@@ -135,6 +148,50 @@ src/
 - **Bara 58 fallbacks** som använder neutrala färger
 
 ### 🧠 **Intelligent:**
+
+---
+
+## 🆕 **Lägga till nya Helix-komponenter:**
+
+### **1. Skapa komponent-mapp:**
+```bash
+mkdir src/styles/components/ny-komponent
+```
+
+### **2. Skapa komponent-stilar:**
+```scss
+// src/styles/components/ny-komponent/_ny-komponent.scss
+@use '@fkui/design/src/core' as core;
+
+.ny-komponent {
+  // Använd Helix variabler
+  background: var(--helix-color-surface-primary-default);
+  color: var(--helix-color-text-base-white);
+  padding: core.densify(var(--helix-spacing-md));
+  border-radius: var(--helix-radius-md);
+}
+```
+
+### **3. Skapa index-fil:**
+```scss
+// src/styles/components/ny-komponent/ny-komponent.scss
+@use '_ny-komponent';
+```
+
+### **4. Lägg till i _all.scss:**
+```scss
+// src/components/_all.scss
+@forward '../styles/components/text-field/text-field';
+@forward '../styles/components/label/label';
+@forward '../styles/components/ny-komponent/ny-komponent';  ← Lägg till denna
+```
+
+### **5. Starta om servern:**
+```bash
+npm start
+```
+
+**✅ Resultat:** Din nya komponent använder automatiskt Helix Design System!
 
 - **Semantisk mappning** → "primary" → "primary", "success" → "success"
 - **Kategoriserad** → Buttons, badges, spacing, shadows grupperade
