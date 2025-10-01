@@ -51,7 +51,7 @@ function onSelectRoute(route: string): void {
 
 .primary-nav {
     /* Override FKUI styles med dina designvariabler */
-    --f-nav-background: var(--brand-primary);
+    --f-nav-background: var(--helix-color-surface-primary-default);
     --f-nav-text-color: white;
     border-radius: var(--border-radius-sm);
 }

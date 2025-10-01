@@ -19,7 +19,8 @@
     "build": "vite build",
     "clean": "rimraf dist",
     "start": "node scripts/start-vue.js",
-    "generate-helix-bridge": "node scripts/generate-helix-fkui-bridge.js"
+    "generate-helix-bridge": "node scripts/generate-helix-fkui-bridge.js",
+    "analyze-component": "node scripts/analyze-fkui-component.js"
   },
   "dependencies": {
     "@fkui/design": "6.20.0",

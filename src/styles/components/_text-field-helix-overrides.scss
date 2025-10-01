@@ -1,0 +1,21 @@
+// =============================================
+// TEXT-FIELD HELIX OVERRIDES
+// Genererad från FKUI SCSS-analys
+// 2025-10-01T11:33:15.490Z
+// =============================================
+
+// BACKGROUND
+$textfield-color-background-default: var(--helix-color-surface-primary-default); // från _variables.scss
+$textfield-color-background-disabled: var(--helix-color-surface-neutral-disabled); // från _variables.scss
+
+// BORDER
+$textfield-color-border-default: var(--helix-color-border-default); // från _variables.scss
+$textfield-color-border-disabled: var(--helix-color-border-default); // från _variables.scss
+$textfield-color-border-error: var(--helix-color-border-error); // från _variables.scss
+
+// TEXT
+$textfield-icon-close-color-content-default: var(--helix-color-text-base-default); // från _variables.scss
+$textfield-icon-close-color-content-disabled: var(--helix-color-text-base-default); // från _variables.scss
+$textfield-color-text-default: var(--helix-color-text-base-default); // från _variables.scss
+$textfield-color-text-disabled: var(--helix-color-text-base-disabled); // från _variables.scss
+
