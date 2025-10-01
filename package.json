@@ -24,7 +24,7 @@
   "dependencies": {
     "@fkui/design": "6.20.0",
     "@fkui/icon-lib-default": "6.20.0",
-    "@fkui/theme-default": "6.20.0",
+    "@fkui/theme-default": "^6.20.0",
     "vue": "3.5.22",
     "vue-router": "4.5.1"
   },
@@ -33,6 +33,7 @@
     "@fkui/vue": "^6.20.0",
     "@vitejs/plugin-vue": "6.0.1",
     "sass-embedded": "^1.93.2",
+    "typescript": "^5.9.3",
     "vite": "7.1.7"
   },
   "engines": {

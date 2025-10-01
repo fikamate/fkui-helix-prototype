@@ -1,0 +1,106 @@
+@use '@fkui/design/src/components/text-field/text-field' as ftextfield;
+@use '@fkui/design/src/core' as core;
+@use 'variations' as variations;
+
+.text-field {
+  font-family: var(--helix-typography-font-family-font-family-body), sans-serif;
+  font-size: var(--helix-typography-font-size-text-md);
+  font-weight: 400;
+  line-height: 1.5;
+
+  &__input {
+    background-color: var(--helix-color-surface-base-white);
+    border: 1px solid var(--helix-color-border-neutral-stronger);
+    border-radius: var(--helix-radius-sm);
+    color: var(--helix-color-text-neutral-strongest);
+    min-height: core.densify(var(--helix-spacing-4xl));
+    padding-inline: core.densify(var(--helix-spacing-md));
+    padding-block: core.densify(var(--helix-spacing-sm));
+    outline: none;
+    width: 100%;
+
+    &:disabled {
+      background-color: var(--helix-color-surface-neutral-weaker);
+      border-color: var(--helix-color-border-neutral-stronger);
+      color: var(--helix-color-text-neutral-weaker);
+      cursor: not-allowed;
+    }
+
+    &:active {
+      border-color: var(--helix-color-border-primary-strongest);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--helix-color-border-neutral-stronger);
+      outline-offset: 2px;
+    }
+
+    /* Size variants - använd variations mixins för density-stöd */
+    &[data-hx-size='sm'] {
+      @include variations.small;
+    }
+
+    &[data-hx-size='md'] {
+      @include variations.medium;
+    }
+  }
+
+  /* Hjälptext - enligt specifikation */
+  &__description {
+    color: var(--helix-color-text-neutral-strong);
+    display: block;
+    font-family:
+      var(--helix-typography-font-family-font-family-body), sans-serif;
+    font-size: var(--helix-typography-font-size-text-md);
+    font-weight: 400;
+    line-height: 1.5;
+    margin-top: var(--helix-spacing-xs);
+  }
+
+  /* Formatbeskrivning - enligt specifikation */
+  &__format-description {
+    color: var(--helix-color-text-neutral-weak);
+    display: block;
+    font-family:
+      var(--helix-typography-font-family-font-family-body), sans-serif;
+    font-size: var(--helix-typography-font-size-text-md);
+    font-weight: 400;
+    line-height: 1.5;
+    margin-top: var(--helix-spacing-xs);
+  }
+
+  /* FKUI overrides */
+  .f-form-control__help {
+    color: var(--helix-color-text-neutral-weak) !important;
+    font-family:
+      var(--helix-typography-font-family-font-family-body), sans-serif !important;
+    font-size: var(--helix-typography-font-size-text-md) !important;
+    font-weight: 400 !important;
+    line-height: 1.5 !important;
+  }
+
+  .f-label {
+    color: var(--helix-color-text-base-black) !important;
+    font-family: inherit !important;
+    font-size: inherit !important;
+    font-weight: 600 !important;
+  }
+}
+
+/* Density-specific border-radius overrides */
+.density-default .text-field__input {
+  border-radius: 8px;
+}
+
+.density-dense .text-field__input,
+.density-densest .text-field__input {
+  border-radius: 4px;
+}
+
+/* Fallback för äldre webbläsare */
+@supports not selector(:focus-visible) {
+  .text-field__input:focus {
+    outline: 2px solid var(--helix-color-border-neutral-stronger);
+    outline-offset: 2px;
+  }
+}

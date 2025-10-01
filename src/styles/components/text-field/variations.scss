@@ -1,0 +1,15 @@
+@use '@fkui/design/src/core' as core;
+
+@mixin small {
+  font-size: var(--helix-typography-font-size-text-sm, 14px);
+  min-height: core.densify(var(--helix-spacing-3xl));
+  padding-inline: core.densify(var(--helix-spacing-sm));
+  padding-block: core.densify(var(--helix-spacing-xs));
+}
+
+@mixin medium {
+  font-size: var(--helix-typography-font-size-text-md, 16px);
+  min-height: core.densify(var(--helix-spacing-4xl));
+  padding-inline: core.densify(var(--helix-spacing-md));
+  padding-block: core.densify(var(--helix-spacing-sm));
+}

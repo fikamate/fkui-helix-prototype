@@ -10,6 +10,6 @@
         "skipLibCheck": true,
         "forceConsistentCasingInFileNames": true
     },
-    "include": ["src/**/*.ts", "src/**/*.vue", "src/**/*.d.ts"],
+    "include": ["../src/**/*.ts", "../src/**/*.vue", "../src/**/*.d.ts"],
     "exclude": ["vite.config.ts", "cypress.config.ts"]
 }

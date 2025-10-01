@@ -1,0 +1,24 @@
+@use '@fkui/design/src/core' as core;
+
+.label {
+  color: var(--helix-color-text-base-black);
+  display: inline-block;
+  font-family: var(--helix-typography-font-family-font-family-body), sans-serif;
+  font-size: var(--helix-typography-font-size-text-md);
+  font-weight: 600; /* Semibold för labels */
+  line-height: 1.5;
+  margin-bottom: core.densify(var(--helix-spacing-xs));
+
+  &__description {
+    display: block;
+    font-weight: 400;
+    color: var(--helix-color-text-neutral-strong);
+    line-height: 1.5;
+
+    /* Ärver font-family och font-size från parent */
+
+    &__format {
+      color: var(--helix-color-text-neutral-weak);
+    }
+  }
+}

@@ -43,6 +43,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { FTextField, FLabel, FIcon, FTooltip } from '@fkui/vue';
+import HxTextField from './hx-textfield/HxTextField.vue';
 
 const basicValue = ref('');
 const emailValue = ref('');

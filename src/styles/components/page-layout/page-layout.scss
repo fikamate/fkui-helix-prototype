@@ -1,0 +1,28 @@
+/* Header + Footer */
+.hx-page-layout::part(header),
+.hx-page-layout::part(footer) {
+  --f-page-layout-background: var(--helix-color-surface-brand-strong);
+  --f-page-layout-color: var(--helix-color-text-weakest);
+  padding-block: var(--helix-spacing-sm);
+}
+
+/* Left panel */
+.hx-page-layout::part(left) {
+  --f-page-layout-background: var(--helix-color-surface-neutral-default);
+  --f-page-layout-color: var(--helix-color-text-neutral-strongest);
+  padding: var(--helix-spacing-md);
+}
+
+/* Right panel */
+.hx-page-layout::part(right) {
+  --f-page-layout-background: var(--helix-color-surface-neutral-default);
+  --f-page-layout-color: var(--helix-color-text-neutral-strongest);
+  padding: var(--helix-spacing-md);
+}
+
+/* Content (main/default) */
+.hx-page-layout::part(content) {
+  --f-page-layout-background: var(--helix-color-surface-base-white);
+  --f-page-layout-color: var(--helix-color-text-neutral-strongest);
+  padding: var(--helix-spacing-lg);
+}

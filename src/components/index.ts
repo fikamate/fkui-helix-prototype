@@ -4,3 +4,5 @@ export { default as XLeftPanel } from './XLeftPanel.vue';
 export { default as XPersonPanel } from './XPersonPanel.vue';
 export { default as XToolbar } from './XToolbar.vue';
 export { default as XTextFieldDemo } from './XTextFieldDemo.vue';
+export { default as HxTextField } from './hx-textfield';
+export { default as HxLabel } from './hx-label';

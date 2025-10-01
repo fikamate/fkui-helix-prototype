@@ -6,6 +6,9 @@
 /* Importera Helix ↔ FKUI intelligent bridge */
 @import './styles/helix-fkui-bridge.scss';
 
+/* Importera komponent-specifika SCSS-filer */
+@import './components/index.scss';
+
 /* ÄLDRE: Importera automatiskt genererade FKUI overrides (kan tas bort om Helix bridge fungerar) */
 /* @import "./styles/generated-fkui-overrides.scss"; */
 
