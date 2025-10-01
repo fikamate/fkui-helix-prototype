@@ -2,7 +2,7 @@
     <div class="contextbar">
         <div class="contextbar__forman">KAT_ANS</div>
         <div clas="contextbar__pnr">19120211-9151</div>
-        <div clas="contextbar__name">Test Testorsson</div>
+        <div clas="contextbar__name">Test Testson</div>
     </div>
 </template>
 
