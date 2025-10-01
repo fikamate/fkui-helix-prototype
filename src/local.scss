@@ -140,53 +140,10 @@ main {
   filter: hue-rotate(45deg) saturate(1.5) !important;
 }
 
-/* === SPECIFIKA OVERRIDES FÖR APP.VUE SHADOW PARTS === */
+/* === SHADOW PARTS STYLING HANTERAS NU AV PAGE-LAYOUT.SCSS === */
 
-/* Override för hela page layout för att säkerställa att våra färger används */
-f-page-layout {
-  /* Definiera våra custom variabler här också för shadow parts */
-  --f-background-pageheader-primary: var(
-    --helix-color-surface-primary-default
-  ) !important;
-  --fkds-color-background-secondary: color-mix(
-    in srgb,
-    var(--helix-color-surface-primary-default) 8%,
-    #f4f4f4
-  ) !important;
-  --fkds-color-text-primary: #1b1e23 !important;
-  --fkds-color-text-inverted: #ffffff !important;
-}
-
-/* Direkt styling för synligare resultat */
-f-page-header {
-  background: linear-gradient(
-    135deg,
-    var(--helix-color-surface-primary-default),
-    var(--helix-color-surface-secondary-default)
-  ) !important;
-  color: white !important;
-}
-
-/* Lägg till en färgad border för att se panel-områdena tydligt */
-f-resize-pane {
-  border: 2px solid var(--helix-color-border-primary-default) !important;
-  margin: 4px !important;
-}
-
-/* Toolbar styling */
-.toolbar {
-  background: var(--helix-color-surface-primary-default) !important;
-  color: white !important;
-  padding: 12px !important;
-  border-radius: 8px !important;
-}
-
-/* Context bar styling */
-x-context-bar {
-  background: var(--helix-color-surface-secondary-default) !important;
-  color: white !important;
-  padding: 8px !important;
-}
+/* Bridge-systemet + page-layout.scss hanterar nu all styling automatiskt */
+/* Inga manuella overrides behövs längre för shadow parts */
 
 /* Fix för meny hover-states */
 .imenu--horizontal .imenu__list__item--highlight .imenu__list__anchor:hover,

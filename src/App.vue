@@ -14,7 +14,6 @@ import {
     XPersonPanel,
     XExpensePanel,
 } from "./components";
-import HxTextField from "./components/hx-textfield/HxTextField.vue";
 
 declare module "@fkui/vue" {
     interface FPageLayoutSlotMapping {
@@ -67,9 +66,7 @@ registerLayout({
 
 // Reactive data för HxTextField
 const testValue = ref('');
-const name = ref('')
-const email = ref('')
-const phone = ref('')
+// Router views hanterar all content
 </script>
 
 <template>
@@ -101,51 +98,9 @@ const phone = ref('')
             </f-resize-pane>
 
 <main :slot="content">
-    <div class="container">
-        <div class="density-default">
-            <small>(Densitetsgrad: default-density)</small>
-            <HxTextField
-                v-model="name"
-                description="Hjälptext"
-                format-description="Formatbeskrivning"
-                placeholder="Namn"
-            >
-                <template #default>Etikettnamn</template>
-            </HxTextField>
-        </div>
-
-        <div class="density-dense">
-            <small>(Densitetsgrad: dense-density)</small>
-            <HxTextField
-                v-model="email"
-                description="Hjälptext"
-                format-description="Formatbeskrivning"
-                placeholder="E-post"
-            >
-                <template #default>Etikettnamn</template>
-            </HxTextField>
-        </div>
-
-        <div class="density-densest">
-            <small>(Densitetsgrad: densest-density)</small>
-            <HxTextField
-                v-model="phone"
-                description="Hjälptext"
-                format-description="Formatbeskrivning"
-                placeholder="Telefon"
-            >
-                <template #default>Etikettnamn</template>
-            </HxTextField>
-        </div>
-
-        <div>
-            <p>Namn: {{ name }}</p>
-            <p>E-post: {{ email }}</p>
-            <p>Telefon: {{ phone }}</p>
-        </div>
-    </div>
+    <!-- Router views renderas här -->
+    <router-view />
 </main>
-<router-view />
 
             <f-resize-pane
                 :slot="right"

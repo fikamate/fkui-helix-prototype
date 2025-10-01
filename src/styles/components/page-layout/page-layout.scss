@@ -13,135 +13,47 @@
         / min-content 1fr;
 }
 
-/* Header area - Helix primary brand med FKUI-variabler */
+/* Header area - ANVÄNDER FKUI:s officiella färger */
 ::part(area header) {
-  /* Helix-variabler direkt */
-  background: var(--helix-color-surface-primary-default) !important;
-  color: var(--helix-color-text-base-white) !important;
-  
-  /* FKUI-variabler mappas via bridge till Helix */
-  --f-background-pageheader-primary: var(--helix-color-surface-primary-default) !important;
-  --f-page-layout-color: var(--helix-color-text-base-white) !important;
-  padding: var(--helix-spacing-50) !important;
+    --f-page-layout-background: #116a3d; /* FKUI:s officiella header-färg */
+    --f-page-layout-color: #ffffff;
 }
 
-/* Left panel - Helix neutral with Helix spacing */
-::part(area left) {
-  --f-page-layout-background: var(--helix-color-surface-neutral-subtle) !important;
-  --f-page-layout-color: var(--helix-color-text-neutral-default) !important;
-  background: var(--helix-color-surface-neutral-subtle) !important;
-  padding: var(--helix-spacing-50) !important;
-  border-right: 2px solid var(--helix-color-border-neutral-default) !important;
-}
-
-/* Right panel - Helix neutral subtle */
-::part(area right) {
-  --f-page-layout-background: var(--helix-color-surface-neutral-subtle) !important;
-  --f-page-layout-color: var(--helix-color-text-neutral-default) !important;
-  background: var(--helix-color-surface-neutral-subtle) !important;
-  padding: var(--helix-spacing-50) !important;
-  border-left: 2px solid var(--helix-color-border-neutral-default) !important;
-}
-
-/* Content area - Helix white surface */
-::part(area content) {
-  --f-page-layout-background: var(--helix-color-surface-base-white) !important;
-  --f-page-layout-color: var(--helix-color-text-base-default) !important;
-  background: var(--helix-color-surface-base-white) !important;
-  padding: var(--helix-spacing-80) !important;
-}
-
-/* Context bar - Helix neutral (matchar App.vue) */
+/* Context bar - FKUI:s officiella ljusa bakgrund */
 ::part(area contextbar) {
-  --f-page-layout-background: var(--helix-color-surface-neutral-default) !important;
-  --f-page-layout-color: var(--helix-color-text-neutral-default) !important;
-  background: var(--helix-color-surface-neutral-default) !important;
-  padding: var(--helix-spacing-30) !important;
-  border-bottom: 2px solid var(--helix-color-border-neutral-default) !important;
+    --f-page-layout-background: #f8f8f8; /* FKUI ljusgrå */
+    --f-page-layout-color: #333333;
 }
 
-/* Toolbar - Helix secondary (matchar App.vue) */
+/* Toolbar - FKUI:s officiella ljusa bakgrund */
 ::part(area toolbar) {
-  --f-page-layout-background: var(--helix-color-surface-secondary-default) !important;
-  --f-page-layout-color: var(--helix-color-text-neutral-default) !important;
-  background: var(--helix-color-surface-secondary-default) !important;
-  padding: var(--helix-spacing-30) !important;
-  border-bottom: 3px solid var(--helix-color-border-primary-default) !important;
+    --f-page-layout-background: #f8f8f8; /* FKUI ljusgrå */
+    --f-page-layout-color: #333333;
+}
+
+/* Left panel - FKUI:s officiella ljusa bakgrund */
+::part(area left) {
+    --f-page-layout-background: #f8f8f8; /* FKUI ljusgrå */
+    --f-page-layout-color: #333333;
+}
+
+/* Right panel - FKUI:s officiella ljusa bakgrund */
+::part(area right) {
+    --f-page-layout-background: #f8f8f8; /* FKUI ljusgrå */
+    --f-page-layout-color: #333333;
 }
 
 /* =============================================
-   FKUI KOMPONENTER STYLING
+   FKUI KOMPONENTER - ENDAST BRIDGE-BASERAD STYLING
    ============================================= */
 
-/* Page Header med gradient och shadow */
-f-page-header,
-f-page-header *,
-:deep(f-page-header),
-:deep(.f-page-header) {
-    background: var(--helix-color-surface-primary-default) !important;
-    background-color: var(--helix-color-surface-primary-default) !important;
-    background-image: linear-gradient(
-        135deg,
-        var(--helix-color-surface-primary-default),
-        var(--helix-color-surface-primary-strong)
-    ) !important;
-    color: var(--helix-color-text-base-white) !important;
-    box-shadow: 0 1px 2px var(--helix-color-shadow-neutral-sm-01),
-        0 1px 3px var(--helix-color-shadow-neutral-sm-02) !important;
-    padding: var(--helix-spacing-50) !important;
-}
+/* All styling hanteras nu via Bridge-systemet och FKUI-variabler */
+/* Shadow parts får sina färger från ::part() selekorerna ovan */
+/* Bridge-systemet mappar automatiskt FKUI → Helix */
 
-/* FKUI Bridge-variabler för f-page-header */
-f-page-header {
-    /* Bridge-systemet mappar dessa automatiskt, men override för säkerhet */
-    --f-background-pageheader-primary: var(--helix-color-surface-primary-default) !important;
-    --f-color-primary-strong: var(--helix-color-surface-primary-strong) !important;
-    --f-color-brand-a-medium: var(--helix-color-surface-primary-default) !important;
-    --fkds-color-action-background-primary-default: var(--helix-color-surface-primary-default) !important;
-}
-
-/* Navigation Menu styling */
-:deep(.f-navigation-menu) {
-    background: var(--helix-color-surface-primary-default) !important;
-    padding: var(--helix-spacing-30) !important;
-    border-radius: 8px !important;
-    margin: var(--helix-spacing-20) !important;
-}
-
-:deep(.f-navigation-menu a) {
-    color: var(--helix-color-text-base-white) !important;
-    border: 1px solid rgba(255, 255, 255, 0.3) !important;
-    border-radius: 6px !important;
-    padding: var(--helix-spacing-20) var(--helix-spacing-30) !important;
-    text-decoration: none !important;
-    transition: all 0.2s ease !important;
-    background: rgba(255, 255, 255, 0.1) !important;
-}
-
-:deep(.f-navigation-menu a:hover) {
-    background: rgba(255, 255, 255, 0.2) !important;
-    border-color: var(--helix-color-text-base-white) !important;
-}
-
-/* =============================================
-   CUSTOM BUTTON STYLING
-   ============================================= */
-
-/* Specifik styling för "öppna detaljpanel"-knappen */
-:deep(.button.button--secondary) {
-    border-radius: 4px !important;
-    background: var(--helix-color-surface-secondary-default) !important;
-    color: var(--helix-color-text-base-white) !important;
-    border: 2px solid var(--helix-color-border-secondary-default) !important;
-    padding: var(--helix-spacing-30) var(--helix-spacing-50) !important;
-    font-weight: 500 !important;
-    transition: all 0.2s ease !important;
-}
-
-:deep(.button.button--secondary:hover) {
-    background: var(--helix-color-surface-primary-default) !important;
-    border-color: var(--helix-color-border-primary-default) !important;
-    transform: translateY(-1px) !important;
-    box-shadow: 0 4px 6px var(--helix-color-shadow-neutral-md-01),
-        0 2px 4px var(--helix-color-shadow-neutral-md-02) !important;
-}
+/* Bridge-systemet + FKUI-variabler hanterar automatiskt:
+   - Navigation menu färger via --f-* variabler
+   - Button styling via --fkds-* variabler  
+   - Hover states via mappade Helix tokens
+   
+   Inga manuella overrides behövs! */

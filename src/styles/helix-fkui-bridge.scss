@@ -1,6 +1,6 @@
 /*
  * HELIX ↔ FKUI Bridge - Automatiskt genererad
- * Genererad: 2025-10-01T11:13:56.828Z
+ * Genererad: 2025-10-01T14:38:42.381Z
  * 
  * Detta är en intelligent överlagring som mappar FKUI:s CSS-variabler
  * till ditt Helix designsystem.
@@ -197,7 +197,7 @@
     --f-border-color-progress-finished: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
     --f-border-color-progress-ongoing: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
     --f-border-color-separator: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
-    --f-border-color-separator-contextmenu: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
+    --f-border-color-separator-contextmenu: var(--helix-color-text-base-default); /* Automatiskt mappad från Helix designsystem */
     --f-border-color-separator-pageheader-primary: var(--helix-color-text-primary-default); /* Automatiskt mappad från Helix designsystem */
     --f-border-color-static-panel: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
     --f-border-color-success: var(--helix-color-border-success-default); /* Automatiskt mappad från Helix designsystem */
@@ -282,33 +282,33 @@
     --f-text-color-button-tertiary-inverted: var(--helix-color-text-primary-default); /* Automatiskt mappad från Helix designsystem */
     --f-text-color-button-tertiary-inverted-disabled: var(--helix-color-text-primary-default); /* Automatiskt mappad från Helix designsystem */
     --f-text-color-button-tertiary-inverted-hover: var(--helix-color-text-primary-default); /* Automatiskt mappad från Helix designsystem */
-    --f-text-color-chip: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
-    --f-text-color-chip-active: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
-    --f-text-color-chip-hover: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
-    --f-text-color-close-button: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
-    --f-text-color-default: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
-    --f-text-color-default-inverted: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
-    --f-text-color-discrete: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
+    --f-text-color-chip: var(--helix-color-text-base-default); /* Automatiskt mappad från Helix designsystem */
+    --f-text-color-chip-active: var(--helix-color-text-base-default); /* Automatiskt mappad från Helix designsystem */
+    --f-text-color-chip-hover: var(--helix-color-text-base-default); /* Automatiskt mappad från Helix designsystem */
+    --f-text-color-close-button: var(--helix-color-text-base-default); /* Automatiskt mappad från Helix designsystem */
+    --f-text-color-default: var(--helix-color-text-base-default); /* Automatiskt mappad från Helix designsystem */
+    --f-text-color-default-inverted: var(--helix-color-text-base-default); /* Automatiskt mappad från Helix designsystem */
+    --f-text-color-discrete: var(--helix-color-text-base-default); /* Automatiskt mappad från Helix designsystem */
     --f-text-color-error: var(--helix-color-text-error-default); /* Automatiskt mappad från Helix designsystem */
-    --f-text-color-heading-1: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
-    --f-text-color-heading-2: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
-    --f-text-color-heading-3: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
-    --f-text-color-heading-4: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
-    --f-text-color-heading-5: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
-    --f-text-color-heading-6: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
-    --f-text-color-heading-expandable-panel: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
-    --f-text-color-input-disabled: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
-    --f-text-color-link: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
-    --f-text-color-link-discrete: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
-    --f-text-color-link-discrete-hover: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
-    --f-text-color-link-hover: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
-    --f-text-color-menu: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
-    --f-text-color-menu-horizontal-highlight: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
-    --f-text-color-menu-hover: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
-    --f-text-color-popupmenu: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
-    --f-text-color-popupmenu-hover: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
-    --f-text-color-weekday-weeknumber: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
-    --f-text-color-wizard-step-done: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
+    --f-text-color-heading-1: var(--helix-color-text-base-default); /* Automatiskt mappad från Helix designsystem */
+    --f-text-color-heading-2: var(--helix-color-text-base-default); /* Automatiskt mappad från Helix designsystem */
+    --f-text-color-heading-3: var(--helix-color-text-base-default); /* Automatiskt mappad från Helix designsystem */
+    --f-text-color-heading-4: var(--helix-color-text-base-default); /* Automatiskt mappad från Helix designsystem */
+    --f-text-color-heading-5: var(--helix-color-text-base-default); /* Automatiskt mappad från Helix designsystem */
+    --f-text-color-heading-6: var(--helix-color-text-base-default); /* Automatiskt mappad från Helix designsystem */
+    --f-text-color-heading-expandable-panel: var(--helix-color-text-base-default); /* Automatiskt mappad från Helix designsystem */
+    --f-text-color-input-disabled: var(--helix-color-text-base-default); /* Automatiskt mappad från Helix designsystem */
+    --f-text-color-link: var(--helix-color-text-base-default); /* Automatiskt mappad från Helix designsystem */
+    --f-text-color-link-discrete: var(--helix-color-text-base-default); /* Automatiskt mappad från Helix designsystem */
+    --f-text-color-link-discrete-hover: var(--helix-color-text-base-default); /* Automatiskt mappad från Helix designsystem */
+    --f-text-color-link-hover: var(--helix-color-text-base-default); /* Automatiskt mappad från Helix designsystem */
+    --f-text-color-menu: var(--helix-color-text-base-default); /* Automatiskt mappad från Helix designsystem */
+    --f-text-color-menu-horizontal-highlight: var(--helix-color-text-base-default); /* Automatiskt mappad från Helix designsystem */
+    --f-text-color-menu-hover: var(--helix-color-text-base-default); /* Automatiskt mappad från Helix designsystem */
+    --f-text-color-popupmenu: var(--helix-color-text-base-default); /* Automatiskt mappad från Helix designsystem */
+    --f-text-color-popupmenu-hover: var(--helix-color-text-base-default); /* Automatiskt mappad från Helix designsystem */
+    --f-text-color-weekday-weeknumber: var(--helix-color-text-base-default); /* Automatiskt mappad från Helix designsystem */
+    --f-text-color-wizard-step-done: var(--helix-color-text-base-default); /* Automatiskt mappad från Helix designsystem */
     --f-tooltip-border-color: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
     --fkds-color-action-background-disabled: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
     --fkds-color-action-background-primary-active: var(--helix-color-surface-primary-default); /* Automatiskt mappad från Helix designsystem */
@@ -326,11 +326,11 @@
     --fkds-color-action-border-primary-default: var(--helix-color-text-primary-default); /* Automatiskt mappad från Helix designsystem */
     --fkds-color-action-border-primary-focus: var(--helix-color-text-primary-default); /* Automatiskt mappad från Helix designsystem */
     --fkds-color-action-border-primary-hover: var(--helix-color-text-primary-default); /* Automatiskt mappad från Helix designsystem */
-    --fkds-color-action-text-disabled: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
-    --fkds-color-action-text-inverted-active: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
-    --fkds-color-action-text-inverted-default: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
-    --fkds-color-action-text-inverted-focus: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
-    --fkds-color-action-text-inverted-hover: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
+    --fkds-color-action-text-disabled: var(--helix-color-text-base-default); /* Automatiskt mappad från Helix designsystem */
+    --fkds-color-action-text-inverted-active: var(--helix-color-text-base-default); /* Automatiskt mappad från Helix designsystem */
+    --fkds-color-action-text-inverted-default: var(--helix-color-text-base-default); /* Automatiskt mappad från Helix designsystem */
+    --fkds-color-action-text-inverted-focus: var(--helix-color-text-base-default); /* Automatiskt mappad från Helix designsystem */
+    --fkds-color-action-text-inverted-hover: var(--helix-color-text-base-default); /* Automatiskt mappad från Helix designsystem */
     --fkds-color-action-text-primary-active: var(--helix-color-text-primary-default); /* Automatiskt mappad från Helix designsystem */
     --fkds-color-action-text-primary-default: var(--helix-color-text-primary-default); /* Automatiskt mappad från Helix designsystem */
     --fkds-color-action-text-primary-focus: var(--helix-color-text-primary-default); /* Automatiskt mappad från Helix designsystem */
@@ -363,8 +363,8 @@
     --fkds-color-feedback-border-neutral: var(--helix-color-border-neutral-weak); /* Automatiskt mappad från Helix designsystem */
     --fkds-color-feedback-border-positive: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
     --fkds-color-feedback-border-warning: var(--helix-color-border-warning-default); /* Automatiskt mappad från Helix designsystem */
-    --fkds-color-feedback-text-negative: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
-    --fkds-color-feedback-text-positive: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
+    --fkds-color-feedback-text-negative: var(--helix-color-text-base-default); /* Automatiskt mappad från Helix designsystem */
+    --fkds-color-feedback-text-positive: var(--helix-color-text-base-default); /* Automatiskt mappad från Helix designsystem */
     --fkds-color-select-background-primary-active: var(--helix-color-surface-primary-default); /* Automatiskt mappad från Helix designsystem */
     --fkds-color-select-background-primary-default: var(--helix-color-surface-primary-default); /* Automatiskt mappad från Helix designsystem */
     --fkds-color-select-background-primary-focus: var(--helix-color-surface-primary-default); /* Automatiskt mappad från Helix designsystem */
@@ -373,8 +373,8 @@
     --fkds-color-select-background-secondary-default: var(--helix-color-surface-secondary-default); /* Automatiskt mappad från Helix designsystem */
     --fkds-color-select-background-secondary-focus: var(--helix-color-surface-secondary-default); /* Automatiskt mappad från Helix designsystem */
     --fkds-color-select-background-secondary-hover: var(--helix-color-surface-secondary-default); /* Automatiskt mappad från Helix designsystem */
-    --fkds-color-text-disabled: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
-    --fkds-color-text-inverted: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */
+    --fkds-color-text-disabled: var(--helix-color-text-base-default); /* Automatiskt mappad från Helix designsystem */
+    --fkds-color-text-inverted: var(--helix-color-text-base-default); /* Automatiskt mappad från Helix designsystem */
     --fkds-color-text-primary: var(--helix-color-text-primary-default); /* Automatiskt mappad från Helix designsystem */
     --fkds-color-text-secondary: var(--helix-color-text-neutral-weak); /* Automatiskt mappad från Helix designsystem */
     --fkds-icon-color-action-content-inverted-active: var(--helix-color-surface-neutral-default); /* Automatiskt mappad från Helix designsystem */

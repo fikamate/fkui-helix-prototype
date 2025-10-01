@@ -416,8 +416,13 @@ function mapFKUIToHelix(fkuiVar) {
 
   // === FALLBACK ENDAST FÖR FÄRGER ===
 
-  // Om ingen mappning hittas, använd neutral färger som fallback ENDAST för färgrelaterade variabler
+  // Om ingen mappning hittas, använd rätt färgtyp som fallback
+  if (varName.includes('text') && varName.includes('color')) {
+    // Text-färger → text-variabler
+    return 'var(--helix-color-text-base-default)';
+  }
   if (varName.includes('color') || varName.includes('background')) {
+    // Andra färger → surface-variabler  
     return 'var(--helix-color-surface-neutral-default)';
   }
 
